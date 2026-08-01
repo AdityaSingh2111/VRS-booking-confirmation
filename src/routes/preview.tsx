@@ -23,7 +23,7 @@ function PreviewPage() {
 
           <button
             onClick={() => navigate({ to: "/" })}
-            className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-white hover:bg-blue-700"
+            className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700"
           >
             Back to Booking Form
           </button>
@@ -33,31 +33,44 @@ function PreviewPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-100 py-8">
+    <main className="min-h-screen bg-slate-100">
       {/* Toolbar */}
-      <div className="no-print mx-auto mb-6 flex w-[210mm] max-w-full items-center justify-between px-2">
-        <h2 className="text-xl font-bold">Booking Preview</h2>
-
-        <div className="flex gap-3">
+      <div className="no-print sticky top-0 z-50 border-b bg-white/95 shadow-sm backdrop-blur">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
+          {/* Back Button */}
           <button
             onClick={() => navigate({ to: "/" })}
-            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium hover:bg-slate-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 md:px-5 md:py-2.5"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Edit
+
+            <span className="hidden sm:inline">Back to Edit</span>
+
+            <span className="sm:hidden">Back</span>
           </button>
 
+          {/* Desktop Title Only */}
+          <h1 className="absolute left-1/2 hidden -translate-x-1/2 text-xl font-bold tracking-wide text-slate-800 md:block">
+            Booking Preview
+          </h1>
+
+          {/* Print Button */}
           <button
             onClick={() => window.print()}
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#0DA0FD] px-3 py-2 text-sm font-semibold text-white transition hover:opacity-90 md:px-5 md:py-2.5"
           >
-            <Printer className="h-4 w-4" />
-            Print / Save as PDF
+            <Printer className="h-8 w-8" />
+
+            <span className="hidden sm:inline">Print / Save as PDF</span>
+
+            <span className="sm:hidden">Print</span>
           </button>
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-8">
+      {/* Document */}
+      <div className="document-container mx-auto flex max-w-6xl flex-col items-center gap-8 py-10">
+        {" "}
         <BookingDocument booking={booking} />
       </div>
     </main>

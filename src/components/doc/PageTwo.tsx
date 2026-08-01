@@ -6,18 +6,15 @@
  * Editing terms never requires touching this file.
  */
 import React from "react";
-import {
-  CreditCard,
-  PackageCheck,
-  CalendarX2,
-  ShieldAlert,
-  Scale,
-} from "lucide-react";
+import { CreditCard, PackageCheck, CalendarX2, ShieldAlert, Scale } from "lucide-react";
 import { DocHeader, Footer, TermsCard, Watermark } from "./primitives";
 import { allTermsSections } from "@/content/terms";
 import { BookingData } from "@/types/booking";
 /** Map icon name strings → Lucide components */
-const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement> & { strokeWidth?: number }>> = {
+const iconMap: Record<
+  string,
+  React.FC<React.SVGProps<SVGSVGElement> & { strokeWidth?: number }>
+> = {
   CreditCard,
   PackageCheck,
   CalendarX2,
@@ -41,14 +38,12 @@ export function PageTwo({ booking }: PageTwoProps) {
             Terms &amp; Conditions
           </h2>
           <p className="mt-1.5 text-[10.5px] uppercase tracking-widest text-muted-foreground">
-            Please review the following terms. They form part of your confirmed
-            booking.
+            Please review the following terms. They form part of your confirmed booking.
           </p>
           <div
             className="mt-4 h-[2px] w-full"
             style={{
-              background:
-                "linear-gradient(90deg, var(--brand-blue), var(--brand-orange))",
+              background: "linear-gradient(90deg, var(--brand-blue), var(--brand-orange))",
             }}
           />
         </div>

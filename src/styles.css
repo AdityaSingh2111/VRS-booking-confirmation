@@ -326,7 +326,7 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 @page {
-  size:A4 portrait;
+  size: A4 portrait;
   margin: 0;
 }
 
@@ -354,12 +354,11 @@
   }
 
   body {
-    width: 210mm;
+    width: auto !important;
     margin: 0 !important;
     padding: 0 !important;
-    background: #fff !important;
+    background: white !important;
     overflow: visible !important;
-    -webkit-font-smoothing: antialiased;
   }
 
   /* ── Hide non-print elements ── */
@@ -376,6 +375,8 @@
   }
 
   main>div {
+    margin: 0 !important;
+    padding: 0 !important;
     gap: 0 !important;
   }
 
@@ -385,25 +386,27 @@
     height: 297mm !important;
     min-height: 297mm !important;
     max-height: 297mm !important;
+
     margin: 0 !important;
-    margin-bottom:40px;
     padding: 15mm !important;
+
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    overflow: visible !important;
+
+    overflow: hidden !important;
     box-sizing: border-box !important;
 
-    /* Page break control */
     page-break-after: always;
     break-after: page;
+
     page-break-inside: avoid;
     break-inside: avoid;
   }
 
-  .sheet:last-of-type {
-    page-break-after: auto;
-    break-after: auto;
+  .sheet:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
   }
 
   /* ── Prevent content splitting across pages ── */
@@ -427,9 +430,15 @@
     z-index: 0 !important;
   }
 
+  .document-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
   /* ── Ensure SVG icons render in print ── */
   svg {
-    overflow: visible !important;
+    overflow: hidden !important;
     shape-rendering: geometricPrecision;
   }
 
@@ -451,6 +460,7 @@
     widows: 3;
   }
 }
+
 .loading-bar {
   width: 40%;
   animation: loadingBar 1.4s ease-in-out infinite;

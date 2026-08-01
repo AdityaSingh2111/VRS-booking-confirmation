@@ -43,7 +43,7 @@ export function FormInput({
           value={value}
           {...register}
           className={`
-            w-full rounded-xl border px-4 py-3 transition-all duration-200 outline-none
+            w-full min-w-0 rounded-xl border px-4 py-3 transition-all duration-200 outline-none
             ${Icon ? "pl-10" : ""}
             ${
               error
