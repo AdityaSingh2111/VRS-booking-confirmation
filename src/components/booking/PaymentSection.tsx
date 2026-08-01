@@ -1,0 +1,85 @@
+import { Wallet, IndianRupee, CreditCard, CheckCircle2 } from "lucide-react";
+import { FieldErrors, UseFormRegister, UseFormWatch } from "react-hook-form";
+
+import { BookingFormValues } from "@/hooks/useBookingForm";
+import { FormInput } from "@/components/form/FormInput";
+import { FormSelect } from "@/components/form/FormSelect";
+import { FormSection } from "@/components/form/FormSection";
+
+interface PaymentSectionProps {
+  register: UseFormRegister<BookingFormValues>;
+  errors: FieldErrors<BookingFormValues>;
+  watch: UseFormWatch<BookingFormValues>;
+}
+
+export function PaymentSection({ register, errors, watch }: PaymentSectionProps) {
+  const total = Number(watch("totalAmount")) || 0;
+  const advance = Number(watch("advancePaid")) || 0;
+
+  const balance = total >= advance ? total - advance : 0;
+  const advanceExceeded = advance > total;
+  return (
+    <FormSection
+      title="Payment Information"
+      description="Enter booking payment details."
+      icon={Wallet}
+      iconBg="bg-green-100"
+      iconColor="text-green-600"
+    >
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <FormInput
+          label="Total Amount"
+          type="number"
+          placeholder="0"
+          icon={IndianRupee}
+          register={register("totalAmount", {
+            valueAsNumber: true,
+          })}
+          error={errors.totalAmount?.message}
+        />
+
+        <FormInput
+          label="Advance Received"
+          type="number"
+          placeholder="0"
+          icon={IndianRupee}
+          register={register("advancePaid", {
+            valueAsNumber: true,
+          })}
+          error={errors.advancePaid?.message}
+        />
+
+        <FormInput
+          label="Balance Amount"
+          type="number"
+          icon={IndianRupee}
+          readOnly
+          value={balance}
+        />
+        {advanceExceeded && (
+          <p className="text-sm font-medium text-red-600">
+            Advance amount cannot exceed total amount.
+          </p>
+        )}
+
+        <FormSelect
+          label="Payment Method"
+          icon={CreditCard}
+          register={register("paymentMethod")}
+          error={errors.paymentMethod?.message}
+          options={["UPI", "Cash", "Bank Transfer", "Cheque", "Card"]}
+        />
+
+        <div className="md:col-span-2">
+          <FormSelect
+            label="Booking Status"
+            icon={CheckCircle2}
+            register={register("bookingStatus")}
+            error={errors.bookingStatus?.message}
+            options={["Confirmed", "Pending Payment", "On Hold"]}
+          />
+        </div>
+      </div>
+    </FormSection>
+  );
+}
