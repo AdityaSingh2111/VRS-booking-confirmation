@@ -21,6 +21,7 @@ export function BookingForm() {
     watch,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useBookingForm(formData);
   useEffect(() => {
@@ -83,6 +84,8 @@ export function BookingForm() {
         method: data.paymentMethod,
         status: data.bookingStatus,
       },
+
+      executiveName: data.executiveName || undefined,
     };
 
     setFormData(data);
@@ -114,7 +117,7 @@ export function BookingForm() {
         </p>
       </div>
       <CustomerSection register={register} errors={errors} />
-      <BookingSection register={register} errors={errors} />
+      <BookingSection register={register} errors={errors} control={control} />
       <AddressSection register={register} errors={errors} />
       <PaymentSection register={register} errors={errors} watch={watch} />
       <FormActions

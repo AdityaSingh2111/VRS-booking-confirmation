@@ -4,6 +4,8 @@ export interface BookingData {
   bookingDate: string;
   generatedOn: string;
 
+  executiveName?: string;
+
   customer: {
     title: string;
     name: string;

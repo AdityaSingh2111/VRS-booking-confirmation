@@ -29,9 +29,12 @@ import {
   Award,
   Map,
   MailIcon,
+  UserCheck,
+  IdCard,
 } from "lucide-react";
 import { Card, DocHeader, Field, Footer, Watermark } from "./primitives";
 import { company, contact, nextSteps, heroChips, trustBadges } from "@/config/company";
+import { findExecutive } from "@/config/executives";
 import QRCode from "react-qr-code";
 /** Map icon name strings → Lucide components */
 const iconMap: Record<
@@ -59,7 +62,7 @@ function BookingDetailItem({
 }) {
   return (
     <div
-      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-1 ${highlight ? "booking-detail-highlight" : ""
+      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-0.5 ${highlight ? "booking-detail-highlight" : ""
         }`}
     >
       <span
@@ -107,7 +110,7 @@ function CustomerDetailItem({
 }) {
   return (
     <div
-      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-1 ${prominent ? "customer-detail-prominent" : ""
+      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-0.5 ${prominent ? "customer-detail-prominent" : ""
         }`}
     >
       <span
@@ -144,14 +147,8 @@ export function PageOne({ booking }: PageOneProps) {
         <DocHeader />
 
         {/* ── Hero ── */}
-        <section className="mt-0 border-t border-hairline pt-4">
-          <div
-            className="relative overflow-hidden rounded-md border px-4 py-3"
-            style={{
-              backgroundColor: "rgb(34 197 94 / 0.055)",
-              borderColor: "rgb(34 197 94 / 0.28)",
-            }}
-          >
+        <section className="mt-0 border-t border-hairline pt-1.5">
+          <div className="relative overflow-hidden rounded-lg border border-emerald-200/90 bg-gradient-to-r from-emerald-50/90 via-emerald-50/40 to-white px-4 py-2.5">
             <svg
               aria-hidden="true"
               className="absolute right-3 top-1/2 h-[32mm] w-[52mm] -translate-y-1/2 opacity-[0.12]"
@@ -234,13 +231,13 @@ export function PageOne({ booking }: PageOneProps) {
                 </div>
 
                 <p
-                  className="mt-1.5 text-[12px] font-semibold leading-tight"
+                  className="mt-1.0 text-[12px] font-semibold leading-tight"
                   style={{ color: "green" }}
                 >
                   Your booking has been successfully confirmed.
                 </p>
 
-                <div className="mt-2 max-w-[128mm]">
+                <div className="mt-1.5 max-w-[128mm]">
                   <p className="text-[13.5px] font-semibold leading-tight text-foreground">
                     {booking.customer.title} {booking.customer.name},
                   </p>
@@ -251,7 +248,7 @@ export function PageOne({ booking }: PageOneProps) {
                   </p>
                 </div>
 
-                <div className="mt-2.5 flex flex-wrap gap-1.5">
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {heroChips.map((c) => (
                     <span
                       key={c}
@@ -269,7 +266,7 @@ export function PageOne({ booking }: PageOneProps) {
                 </div>
               </div>
 
-              <div className="h-[31mm]" aria-hidden="true" />
+              <div className="h-[25mm]" aria-hidden="true" />
             </div>
           </div>
         </section>
@@ -279,7 +276,7 @@ export function PageOne({ booking }: PageOneProps) {
           <Card
             title="Booking Details"
             icon={<CalendarDays className="h-4 w-4" />}
-            className="page-one-card booking-details-card"
+            className="page-one-card booking-details-card rounded-lg border border-sky-200/80 bg-gradient-to-br from-sky-50/50 via-slate-50/70 to-slate-50/90 px-3 py-2"
           >
             <div className="booking-details-grid grid grid-cols-2 gap-x-4">
               <BookingDetailItem
@@ -319,7 +316,7 @@ export function PageOne({ booking }: PageOneProps) {
           <Card
             title="Customer Details"
             icon={<CircleUserRound className="h-4 w-4" />}
-            className="page-one-card customer-details-card"
+            className="page-one-card customer-details-card rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
           >
             <div className="customer-details-grid grid grid-cols-2 gap-x-3">
               <CustomerDetailItem
@@ -347,7 +344,7 @@ export function PageOne({ booking }: PageOneProps) {
           <Card
             title="Pickup Address"
             icon={<MapPin className="h-4 w-4" />}
-            className="page-one-card address-card pickup-address-card"
+            className="page-one-card address-card pickup-address-card rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
           >
             <p className="address-copy text-[12px] font-semibold leading-[1.55] text-foreground">
               {booking.pickup.address}
@@ -361,7 +358,7 @@ export function PageOne({ booking }: PageOneProps) {
             title="Delivery Address"
             icon={<Flag className="h-4 w-4" />}
             accent
-            className="page-one-card address-card delivery-address-card"
+            className="page-one-card address-card delivery-address-card rounded-lg border border-amber-200/80 bg-gradient-to-br from-amber-50/40 via-slate-50/70 to-slate-50/90 px-3 py-2"
           >
             <p className="address-copy text-[12px] font-semibold leading-[1.55] text-foreground">
               {booking.delivery.address}
@@ -375,9 +372,9 @@ export function PageOne({ booking }: PageOneProps) {
         {/* ── Payment Summary ── */}
         <div className="pt-1.5">
           <Card title="Payment Summary" className="page-one-card">
-            <div className="grid grid-cols-3 divide-x divide-hairline">
+            <div className="grid grid-cols-3 divide-x divide-hairline rounded-lg border border-slate-200/90 bg-slate-50/90 p-3">
               <div className="pr-4">
-                <p className="text-[9.0px] uppercase tracking-[0.16em] text-slate-1000">
+                <p className="text-[9.0px] font-semibold uppercase tracking-[0.16em] text-slate-700">
                   Total Amount
                 </p>
                 <p className="mt-2 text-[22px] font-semibold leading-none tracking-tight text-foreground">
@@ -385,7 +382,7 @@ export function PageOne({ booking }: PageOneProps) {
                 </p>
               </div>
               <div className="px-4">
-                <p className="text-[9.0px] uppercase tracking-[0.16em] text-slate-1000">
+                <p className="text-[9.0px] font-semibold uppercase tracking-[0.16em] text-slate-700">
                   Advance Paid
                 </p>
                 <p
@@ -396,7 +393,7 @@ export function PageOne({ booking }: PageOneProps) {
                 </p>
               </div>
               <div className="pl-4">
-                <p className="text-[9.0px] uppercase tracking-[0.16em] text-slate-1000">
+                <p className="text-[9.0px] font-semibold uppercase tracking-[0.16em] text-slate-700">
                   Balance Amount
                 </p>
                 <p
@@ -413,12 +410,12 @@ export function PageOne({ booking }: PageOneProps) {
         {/* ── What Happens Next ── */}
         <div className="pt-1.5">
           <section
-            className="page-one-section border-y border-border py-4"
+            className="page-one-section rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
             style={{ pageBreakInside: "avoid", breakInside: "avoid" }}
           >
-            <header className="mb-2 flex items-center gap-2">
+            <header className="mb-1.5 flex items-center gap-2">
               <h3
-                className="font-serif text-[11px] font-bold underline decoration-[1.2px] uppercase tracking-[0.15em]"
+                className="font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
                 style={{ color: "var(--brand-blue)" }}
               >
                 What Happens Next
@@ -439,59 +436,89 @@ export function PageOne({ booking }: PageOneProps) {
           </section>
         </div>
 
-        {/* ── Customer Support ── */}
-        <div className="mt-2 border-t border-hairline pt-2">
-          <h3
-            className="mb-2 font-serif text-[11px] font-bold underline decoration-[1.2px] uppercase tracking-[0.15em]"
-            style={{ color: "var(--brand-blue)" }}
-          >
-            Customer Support
-          </h3>
+        {/* ── Support & Executive Section ── */}
+        <div className="mt-1.5 rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2.5">
+          <div className="flex items-start justify-between gap-4">
+            {/* Left: Customer Support */}
+            <div>
+              <h3
+                className="mb-2 font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
+                style={{ color: "var(--brand-blue)" }}
+              >
+                Customer Support
+              </h3>
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-3.5 w-3.5 text-slate-700" />
+                  <span className="text-[12px] font-semibold text-slate-900">{contact.tollFree}</span>
+                </div>
 
-          <div className="flex items-center justify-between">
-            {/* Left */}
-            <div className="space-y-1.5">
-              <div className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-slate-700" />
-                <span className="text-[12px] font-semibold">{contact.tollFree}</span>
-              </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-3.5 w-3.5 text-slate-700" />
+                  <span className="text-[12px] text-slate-900">{contact.email}</span>
+                </div>
 
-              <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-slate-700" />
-                <span className="text-[12px] text-slate-900">{contact.email}</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Globe className="h-3.5 w-3.5 text-slate-700" />
-                <span className="text-[12px] text-slate-900">{contact.website}</span>
+                <div className="flex items-center gap-2">
+                  <Globe className="h-3.5 w-3.5 text-slate-700" />
+                  <span className="text-[12px] text-slate-900">{contact.website}</span>
+                </div>
               </div>
             </div>
 
-            {/* Right */}
-            <div className="mt-2.0 flex flex-col items-center">
-              <p
-                className="mb-1.5 text-center text-[10.0px] font-semibold uppercase tracking-[0.15em]"
+            {/* Centre: Booking Executive (identical layout & style) */}
+            {booking.executiveName && (() => {
+              const exec = findExecutive(booking.executiveName);
+              return exec ? (
+                <div className="border-l border-hairline pl-4">
+                  <h3
+                    className="mb-2 font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
+                    style={{ color: "var(--brand-blue)" }}
+                  >
+                    Booking Executive
+                  </h3>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <UserCheck className="h-3.5 w-3.5 text-slate-700" />
+                      <span className="text-[12px] font-semibold text-slate-900">{exec.name}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <IdCard className="h-3.5 w-3.5 text-slate-700" />
+                      <span className="text-[12px] text-slate-900">{exec.employeeId}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone className="h-3.5 w-3.5 text-slate-700" />
+                      <span className="text-[12px] text-slate-900">{exec.mobile}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : null;
+            })()}
+
+            {/* Right: Verify Booking QR */}
+            <div className="flex flex-col items-center">
+              <h3
+                className="mb-2 text-center text-[10px] font-semibold uppercase tracking-[0.15em]"
                 style={{ color: "var(--brand-blue)" }}
               >
                 Verify Booking
-              </p>
+              </h3>
 
               <div className="rounded-md border border-hairline bg-white p-1 shadow-sm">
-                <QRCode value={contact.websiteUrl} size={56} bgColor="#e06a0940" fgColor="#000000ff" />
+                <QRCode value={contact.websiteUrl} size={54} bgColor="#e06a0940" fgColor="#000000ff" />
               </div>
             </div>
           </div>
         </div>
 
         {/* ── Trust Ribbon ── */}
-        <div className="my-2.5 grid grid-cols-6 gap-1.5 border-t border-hairline pt-1.5">
+        <div className="my-2 grid grid-cols-6 gap-1.5 rounded-lg border border-slate-200/90 bg-slate-50/90 px-2 py-2">
           {trustBadges.map(({ icon: iconName, label }) => {
             const Icon = iconMap[iconName];
             if (!Icon) return null;
             return (
-              <div key={label} className="flex flex-col items-center gap-1.5 text-center">
-                <Icon className="h-4 w-4 text-slate-900" strokeWidth={1} />
-                <span className="text-[7.5px] font-semibold uppercase tracking-widest text-slate-900">
+              <div key={label} className="flex flex-col items-center gap-1 text-center">
+                <Icon className="h-4 w-4 text-slate-800" strokeWidth={1.5} />
+                <span className="text-[7.5px] font-semibold uppercase tracking-widest text-slate-800">
                   {label}
                 </span>
               </div>
@@ -499,6 +526,7 @@ export function PageOne({ booking }: PageOneProps) {
           })}
         </div>
 
+        <div className="flex-1" />
         <Footer page={1} />
       </div>
     </article>

@@ -3,23 +3,30 @@ import {
   Truck,
   Hash,
   ClipboardList,
+  UserCheck,
 } from "lucide-react";
-import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { Control, Controller, FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { BookingFormValues } from "@/hooks/useBookingForm";
 import { FormInput } from "@/components/form/FormInput";
 import { FormSelect } from "@/components/form/FormSelect";
 import { FormSection } from "@/components/form/FormSection";
+import { FormCombobox } from "@/components/form/FormCombobox";
+import { bookingExecutives } from "@/config/executives";
 
 interface BookingSectionProps {
   register: UseFormRegister<BookingFormValues>;
   errors: FieldErrors<BookingFormValues>;
+  control: Control<BookingFormValues>;
 }
 
 export function BookingSection({
   register,
   errors,
+  control,
 }: BookingSectionProps) {
+  const executiveOptions = bookingExecutives.map((e) => e.name);
+
   return (
     <FormSection
       title="Booking Information"
@@ -66,6 +73,22 @@ export function BookingSection({
             "Warehousing & Storage",
             "Loading & Unloading",
           ]}
+        />
+
+        <Controller
+          name="executiveName"
+          control={control}
+          render={({ field }) => (
+            <FormCombobox
+              label="Booking Executive"
+              icon={UserCheck}
+              options={executiveOptions}
+              value={field.value || ""}
+              onChange={field.onChange}
+              error={errors.executiveName?.message}
+              placeholder="Search or select executive..."
+            />
+          )}
         />
 
       </div>

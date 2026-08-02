@@ -33,6 +33,8 @@ const bookingSchema = z
     paymentMethod: z.string(),
 
     bookingStatus: z.string(),
+
+    executiveName: z.string().optional(),
   })
   .refine((data) => data.totalAmount > 0, {
     path: ["totalAmount"],
@@ -71,6 +73,8 @@ export const defaultBookingValues: BookingFormValues = {
   paymentMethod: "UPI",
 
   bookingStatus: "Confirmed",
+
+  executiveName: "",
 };
 
 export function useBookingForm(values?: BookingFormValues | null) {

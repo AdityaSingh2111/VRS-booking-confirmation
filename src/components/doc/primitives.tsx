@@ -237,8 +237,9 @@ export function TermsCard({
    ═══════════════════════════════════════════════════════════════════ */
 
 export function Footer({ page }: { page: number }) {
+  void page;
   return (
-    <footer className="mt-auto">
+    <footer className="mt-auto overflow-hidden rounded-lg border border-slate-200/90 bg-slate-50/90">
       {/* Colored divider */}
       <div
         className="h-[2px] w-full"
@@ -246,40 +247,40 @@ export function Footer({ page }: { page: number }) {
           background: `linear-gradient(90deg, var(--brand-blue), var(--brand-orange))`,
         }}
       />
-      <div className="pt-3">
+      <div className="px-3 py-2">
         <div className="flex items-center justify-between gap-4">
           <div className="grid flex-1 grid-cols-4 gap-2">
             <div className="flex items-center gap-2">
-              <Globe className="h-3 w-3 text-slate-900" />
+              <Globe className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10.5px] font-extrabold"
+                className="truncate text-[10px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.website}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="h-3 w-3 text-slate-900" />
+              <Phone className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10.5px] font-extrabold"
+                className="truncate text-[10px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.phone}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <PhoneCall className="h-3 w-3 text-slate-900" />
+              <PhoneCall className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10.5px] font-extrabold"
+                className="truncate text-[10px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.phone2}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="h-3 w-3 text-slate-900" />
+              <Mail className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10.5px] font-extrabold"
+                className="truncate text-[10px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.email}
@@ -287,7 +288,7 @@ export function Footer({ page }: { page: number }) {
             </div>
           </div>
         </div>
-        <p className="mt-4.5 border-t border-hairline pt-2.5 text-center text-[10.5px] text-slate-700">
+        <p className="mt-1.5 border-t border-slate-200/80 pt-1.5 text-center text-[9.5px] text-slate-600">
           {doc.copyright} · {doc.generatedNote}
         </p>
       </div>
