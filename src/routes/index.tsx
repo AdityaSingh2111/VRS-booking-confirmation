@@ -4,21 +4,66 @@ import { BookingForm } from "@/components/booking/BookingForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    title: doc.title,
+
     meta: [
-      { title: doc.title },
       {
         name: "description",
         content: doc.description,
       },
-      { property: "og:title", content: doc.title },
+
+      {
+        property: "og:title",
+        content: doc.title,
+      },
+
       {
         property: "og:description",
         content: doc.description,
       },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+
+      {
+        property: "og:image",
+        content: "https://vrsbooking.vercel.app/og-image.png",
+      },
+
+      {
+        property: "og:url",
+        content: "https://vrsbooking.vercel.app",
+      },
+
+      {
+        property: "og:type",
+        content: "website",
+      },
+
+      {
+        property: "og:site_name",
+        content: "VRS Cargo",
+      },
+
+      {
+        property: "twitter:card",
+        content: "summary_large_image",
+      },
+
+      {
+        property: "twitter:title",
+        content: doc.title,
+      },
+
+      {
+        property: "twitter:description",
+        content: doc.description,
+      },
+
+      {
+        property: "twitter:image",
+        content: "https://vrsbooking.vercel.app/og-image.png",
+      },
     ],
   }),
+
   component: Index,
 });
 
