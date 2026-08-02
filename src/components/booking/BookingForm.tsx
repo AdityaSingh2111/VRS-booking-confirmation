@@ -58,6 +58,7 @@ export function BookingForm() {
       generatedOn: new Date().toLocaleDateString("en-IN"),
 
       customer: {
+        title: data.title,
         name: data.customerName,
         phone: data.phone,
         email: data.email ?? "",
@@ -109,7 +110,7 @@ export function BookingForm() {
       <div className="rounded-2xl border bg-white p-6 shadow-sm">
         <h1 className="text-3xl font-bold tracking-tight">Booking Generator</h1>
 
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-700">
           Fill in the customer details below to generate a Booking Confirmation document.
         </p>
       </div>

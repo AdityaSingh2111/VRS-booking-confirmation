@@ -28,11 +28,11 @@ export function FormInput({
 }: FormInputProps) {
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-slate-700">{label}</label>
+      <label className="block text-sm font-semibold text-slate-700">{label}</label>
 
       <div className="relative">
         {Icon && (
-          <Icon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+          <Icon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-600" />
         )}
 
         <input
@@ -50,7 +50,7 @@ export function FormInput({
                 ? "border-red-500 focus:border-red-500"
                 : "border-slate-300 focus:border-sky-500"
             }
-            ${readOnly || disabled ? "bg-slate-100 text-slate-500 cursor-not-allowed" : "bg-white"}
+            ${readOnly || disabled ? "bg-slate-100 text-slate-700 cursor-not-allowed" : "bg-white"}
             focus:ring-2 focus:ring-sky-100
             ${className}
           `}

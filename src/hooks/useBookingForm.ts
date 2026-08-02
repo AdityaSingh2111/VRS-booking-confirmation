@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const bookingSchema = z
   .object({
+    title: z.string(),
     customerName: z.string().min(2, "Customer name is required"),
 
     phone: z.string().min(10).max(10),
@@ -49,6 +50,7 @@ const bookingSchema = z
 export type BookingFormValues = z.infer<typeof bookingSchema>;
 
 export const defaultBookingValues: BookingFormValues = {
+  title: "Mr.",
   customerName: "",
   phone: "",
   email: "",

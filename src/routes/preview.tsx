@@ -19,7 +19,7 @@ function PreviewPage() {
         <div className="rounded-xl border bg-white p-8 shadow-lg">
           <h2 className="text-xl font-semibold">No Booking Found</h2>
 
-          <p className="mt-2 text-slate-500">Please generate a booking first.</p>
+          <p className="mt-2 text-slate-700">Please generate a booking first.</p>
 
           <button
             onClick={() => navigate({ to: "/" })}
@@ -40,7 +40,7 @@ function PreviewPage() {
           {/* Back Button */}
           <button
             onClick={() => navigate({ to: "/" })}
-            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 md:px-5 md:py-2.5"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 md:px-5 md:py-2.5"
           >
             <ArrowLeft className="h-4 w-4" />
 
@@ -56,7 +56,27 @@ function PreviewPage() {
 
           {/* Print Button */}
           <button
-            onClick={() => window.print()}
+            onClick={() => {
+              const suffix =
+                booking.customer.title === "Mr."
+                  ? "Sir"
+                  : booking.customer.title === "Mrs." || booking.customer.title === "Ms."
+                    ? "Ma'am"
+                    : "";
+
+              const fileName = suffix
+                ? `${booking.customer.title} {booking.customer.name} ${suffix} Booking Confirmation`
+                : `${booking.customer.title} {booking.customer.name} Booking Confirmation`;
+
+              const previousTitle = document.title;
+              document.title = fileName;
+
+              window.print();
+
+              setTimeout(() => {
+                document.title = previousTitle;
+              }, 1000);
+            }}
             className="inline-flex items-center gap-2 rounded-lg bg-[#0DA0FD] px-3 py-2 text-sm font-semibold text-white transition hover:opacity-90 md:px-5 md:py-2.5"
           >
             <Printer className="h-8 w-8" />

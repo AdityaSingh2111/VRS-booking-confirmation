@@ -5,6 +5,7 @@ export interface BookingData {
   generatedOn: string;
 
   customer: {
+    title: string;
     name: string;
     phone: string;
     email: string;

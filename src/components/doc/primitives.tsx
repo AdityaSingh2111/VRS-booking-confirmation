@@ -18,11 +18,7 @@ export function Watermark() {
       className="pointer-events-none absolute inset-0 flex items-center justify-center"
       aria-hidden="true"
     >
-      <img
-        src={logo}
-        alt=""
-        className="w-[360px] opacity-[0.05] select-none"
-      />
+      <img src={logo} alt="" className="w-[360px] opacity-[0.05] select-none" />
     </div>
   );
 }
@@ -57,9 +53,9 @@ export function Logo({ compact = false }: { compact?: boolean }) {
 export function DocHeader({ compact = false }: { compact?: boolean }) {
   return (
     <div className="-mt-1 flex flex-col">
-<header className="flex items-center pb-3">
-  <Logo compact={compact} />
-</header>
+      <header className="flex items-center pb-3">
+        <Logo compact={compact} />
+      </header>
       {/* Brand-colored divider line */}
       <div
         className="h-[1.5px] w-full rounded-full"
@@ -106,7 +102,7 @@ export function Card({
         <header className="mb-3 flex items-center gap-2">
           {icon && <span style={{ color: "var(--brand-blue)" }}>{icon}</span>}
           <h3
-            className="font-serif text-[11px] font-medium uppercase tracking-[0.15em]"
+            className="font-serif text-[11px] font-semibold uppercase tracking-[0.15em]"
             style={{ color: "var(--brand-blue)" }}
           >
             {title}
@@ -135,12 +131,12 @@ export function Field({
 }) {
   return (
     <div className="flex min-w-0 items-start gap-2.5">
-      {icon && <span className="mt-[2px] text-muted-foreground">{icon}</span>}
+      {icon && <span className="mt-[2px] text-slate-700">{icon}</span>}
       <div className="min-w-0">
-        <p className="text-[7.5px] uppercase tracking-widest text-muted-foreground">{label}</p>
+        <p className="text-[7.5px] uppercase tracking-widest text-slate-700">{label}</p>
         <p
           className={`mt-0.5 truncate text-[12px] ${
-            strong ? "font-semibold text-foreground" : "font-medium text-foreground/90"
+            strong ? "font-semibold text-foreground" : "font-semibold text-foreground/90"
           }`}
         >
           {value}
@@ -180,7 +176,7 @@ export function TermsCard({
       <header className="mb-3 flex items-center gap-2">
         {icon && <span style={{ color: "var(--brand-blue)" }}>{icon}</span>}
         <h3
-          className="font-serif text-[11px] font-medium uppercase tracking-[0.15em]"
+          className="font-serif text-[11px] font-semibold uppercase tracking-[0.15em]"
           style={{ color: "var(--brand-blue)" }}
         >
           <span className="mr-1.5">{index}</span>
@@ -190,7 +186,7 @@ export function TermsCard({
       {points && (
         <ul className="mt-2.5 grid grid-cols-2 gap-x-6 gap-y-1.5">
           {points.map((p) => (
-            <li key={p} className="flex gap-2 text-[10.5px] leading-[1.55] text-foreground/85">
+            <li key={p} className="flex gap-2 text-[11.5px] leading-[1.55] text-foreground/85">
               <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
               <span>{p}</span>
             </li>
@@ -202,7 +198,7 @@ export function TermsCard({
           {chips.map((c) => (
             <span
               key={c}
-              className="rounded-none border border-hairline bg-transparent px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider text-foreground/75"
+              className="rounded-none border border-hairline bg-transparent px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-foreground/75"
             >
               {c}
             </span>
@@ -210,7 +206,7 @@ export function TermsCard({
         </div>
       )}
       {note && (
-        <p className="mt-4 border-t border-hairline pt-3 text-[9.5px] leading-[1.65] text-muted-foreground">
+        <p className="mt-4 border-t border-hairline pt-3 text-[9.5px] leading-[1.65] text-slate-700">
           {note}
         </p>
       )}
@@ -236,47 +232,47 @@ export function Footer({ page }: { page: number }) {
         <div className="flex items-center justify-between gap-4">
           <div className="grid flex-1 grid-cols-4 gap-4">
             <div className="flex items-center gap-2">
-              <Globe className="h-3 w-3 text-muted-foreground" />
+              <Globe className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[8.5px] font-medium"
+                className="truncate text-[8.5px] font-semibold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.website}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="h-3 w-3 text-muted-foreground" />
+              <Phone className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[8.5px] font-medium"
+                className="truncate text-[8.5px] font-semibold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.phone}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <PhoneCall className="h-3 w-3 text-muted-foreground" />
+              <PhoneCall className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[8.5px] font-medium"
+                className="truncate text-[8.5px] font-semibold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.tollFree}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="h-3 w-3 text-muted-foreground" />
+              <Mail className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[8.5px] font-medium"
+                className="truncate text-[8.5px] font-semibold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.email}
               </span>
             </div>
           </div>
-          <div className="text-[8.5px] font-medium text-muted-foreground">
+          <div className="text-[8.5px] font-semibold text-slate-700">
             Page {page} of {doc.totalPages}
           </div>
         </div>
-        <p className="mt-1.5 border-t border-hairline pt-1.5 text-center text-[8.5px] text-muted-foreground">
+        <p className="mt-1.5 border-t border-hairline pt-1.5 text-center text-[8.5px] text-slate-700">
           {doc.copyright} · {doc.generatedNote}
         </p>
       </div>

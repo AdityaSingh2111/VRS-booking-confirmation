@@ -13,16 +13,12 @@ interface LoadingScreenProps {
   title?: string;
 }
 
-export function LoadingScreen({
-  title = "Preparing Your Booking",
-}: LoadingScreenProps) {
+export function LoadingScreen({ title = "Preparing Your Booking" }: LoadingScreenProps) {
   const [messageIndex, setMessageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setMessageIndex((prev) =>
-        prev === messages.length - 1 ? prev : prev + 1
-      );
+      setMessageIndex((prev) => (prev === messages.length - 1 ? prev : prev + 1));
     }, 800);
 
     return () => clearInterval(interval);
@@ -31,28 +27,17 @@ export function LoadingScreen({
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
       <div className="w-full max-w-md px-8 text-center">
+        <img src={logo} alt="VRS Cargo" className="mx-auto h-20 w-auto animate-pulse" />
 
-        <img
-          src={logo}
-          alt="VRS Cargo"
-          className="mx-auto h-20 w-auto animate-pulse"
-        />
+        <h1 className="mt-8 text-2xl font-bold text-slate-800">{title}</h1>
 
-        <h1 className="mt-8 text-2xl font-bold text-slate-800">
-          {title}
-        </h1>
-
-        <p className="mt-3 text-sm text-slate-500">
-          {messages[messageIndex]}
-        </p>
+        <p className="mt-3 text-sm text-slate-700">{messages[messageIndex]}</p>
 
         <div className="mt-8 h-2 overflow-hidden rounded-full bg-slate-200">
           <div className="loading-bar h-full rounded-full bg-gradient-to-r from-[#0DA0FD] to-[#FA8835]" />
         </div>
 
-        <p className="mt-6 text-xs text-slate-400">
-          Please wait a moment...
-        </p>
+        <p className="mt-6 text-sm text-slate-600">Please wait a moment...</p>
       </div>
     </div>
   );

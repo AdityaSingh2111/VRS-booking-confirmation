@@ -57,7 +57,7 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
           value={balance}
         />
         {advanceExceeded && (
-          <p className="text-sm font-medium text-red-600">
+          <p className="text-sm font-semibold text-red-600">
             Advance amount cannot exceed total amount.
           </p>
         )}

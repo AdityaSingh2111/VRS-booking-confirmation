@@ -6,9 +6,9 @@
 
 // ─── Brand Colors ────────────────────────────────────────────────
 export const brand = {
-  blue: "#0DA0FD",
-  orange: "#FA8835",
-  green: "#22C55E",
+  blue: "#0427b1",
+  orange: "#ef4b05",
+  green: "#08cc50",
 } as const;
 
 // ─── Company Identity ────────────────────────────────────────────
@@ -33,8 +33,7 @@ export const contact = {
 // ─── Document Metadata ──────────────────────────────────────────
 export const doc = {
   title: `VRS Cargo Booking Confirmation | ${company.nameFull}`,
-  description:
-    "Premium booking confirmation document for VRS Cargo Packers and Movers.",
+  description: "Premium booking confirmation document for VRS Cargo Packers and Movers.",
   totalPages: 2,
   copyright: `© ${new Date().getFullYear()} ${company.legalName}. All rights reserved.`,
   generatedNote: "This is a computer-generated booking confirmation.",
@@ -67,8 +66,4 @@ export const nextSteps: string[] = [
 ];
 
 // ─── Hero Chips ──────────────────────────────────────────────────
-export const heroChips: string[] = [
-  "Safe Packing",
-  "Timely Relocation",
-  "Professional Support",
-];
+export const heroChips: string[] = ["Safe Packing", "Timely Relocation", "Professional Support"];

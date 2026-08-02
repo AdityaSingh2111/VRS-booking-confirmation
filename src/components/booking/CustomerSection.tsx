@@ -4,16 +4,14 @@ import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { FormInput } from "@/components/form/FormInput";
 import { FormSection } from "@/components/form/FormSection";
 import { BookingFormValues } from "@/hooks/useBookingForm";
+import { FormSelect } from "../form/FormSelect";
 
 interface CustomerSectionProps {
   register: UseFormRegister<BookingFormValues>;
   errors: FieldErrors<BookingFormValues>;
 }
 
-export function CustomerSection({
-  register,
-  errors,
-}: CustomerSectionProps) {
+export function CustomerSection({ register, errors }: CustomerSectionProps) {
   return (
     <FormSection
       title="Customer Information"
@@ -22,8 +20,12 @@ export function CustomerSection({
       iconBg="bg-sky-100"
       iconColor="text-sky-600"
     >
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-[120px_1fr]">
+        <FormSelect
+          label="Title"
+          register={register("title")}
+          options={["Mr.", "Mrs.", "Ms.", "Dr.", "M/s."]}
+        />
         <FormInput
           label="Customer Name"
           placeholder="Enter customer name"
@@ -32,14 +34,16 @@ export function CustomerSection({
           error={errors.customerName?.message}
         />
 
-        <FormInput
-          label="Phone Number"
-          placeholder="9876543210"
-          type="tel"
-          icon={Phone}
-          register={register("phone")}
-          error={errors.phone?.message}
-        />
+        <div className="md:col-span-2">
+          <FormInput
+            label="Phone Number"
+            placeholder="9876543210"
+            type="tel"
+            icon={Phone}
+            register={register("phone")}
+            error={errors.phone?.message}
+          />
+        </div>
 
         <div className="md:col-span-2">
           <FormInput
@@ -51,7 +55,6 @@ export function CustomerSection({
             error={errors.email?.message}
           />
         </div>
-
       </div>
     </FormSection>
   );

@@ -33,15 +33,15 @@ export function PageTwo({ booking }: PageTwoProps) {
       <div className="relative z-[1] flex min-h-full flex-1 flex-col">
         <DocHeader compact />
 
-        <div className="pt-5">
-          <h2 className="font-serif text-[24px] font-medium leading-tight tracking-tight">
+        <div className="pt-1">
+          <h2 className="mt-0 font-serif text-[24px] font-semibold leading-tight tracking-tight">
             Terms &amp; Conditions
           </h2>
-          <p className="mt-1.5 text-[10.5px] uppercase tracking-widest text-muted-foreground">
+          <p className="mt-0.5 text-[11.5px] uppercase tracking-widest text-slate-700">
             Please review the following terms. They form part of your confirmed booking.
           </p>
           <div
-            className="mt-4 h-[2px] w-full"
+            className="mt-1 h-[2px] w-full"
             style={{
               background: "linear-gradient(90deg, var(--brand-blue), var(--brand-orange))",
             }}
