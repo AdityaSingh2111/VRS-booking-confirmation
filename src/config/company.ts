@@ -60,9 +60,9 @@ export const nextSteps: string[] = [
   "Our relocation coordinator will contact you before your scheduled shifting date.",
   "Please keep your mobile phone reachable.",
   "Keep a valid Government ID ready during pickup.",
-  "Remaining payment is payable before unloading unless agreed otherwise.",
+  "Remaining payment is payable at loading unless agreed otherwise.",
   "Contact Customer Support for any assistance.",
-  "Track your shipment status via our website or app.",
+  "Track your shipment status via our website.",
 ];
 
 // ─── Hero Chips ──────────────────────────────────────────────────
