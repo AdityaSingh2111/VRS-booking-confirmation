@@ -75,7 +75,7 @@ function BookingDetailItem({
         <p className="text-[7.5px] font-semibold uppercase tracking-[0.18em] text-slate-700">
           {label}
         </p>
-        <p className="mt-0.5 truncate text-[12px] font-semibold leading-none text-foreground">
+        <p className="mt-0.5 whitespace-nowrap text-[11.5px] font-semibold leading-none text-foreground">
           {value}
         </p>
       </div>
@@ -123,7 +123,7 @@ function CustomerDetailItem({
         <p className="text-[7.5px] font-semibold uppercase tracking-[0.18em] text-slate-700">
           {label}
         </p>
-        <p className="mt-0.5 truncate text-[12px] font-semibold leading-none text-foreground">
+        <p className="mt-0.5 whitespace-nowrap text-[11.5px] font-semibold leading-none text-foreground">
           {value}
         </p>
       </div>
