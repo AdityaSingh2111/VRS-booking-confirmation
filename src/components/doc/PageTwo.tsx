@@ -35,7 +35,7 @@ export function PageTwo({ booking }: PageTwoProps) {
 
         <div className="pt-1">
           <h2 className="mt-0 font-serif text-[24px] font-semibold leading-tight tracking-tight">
-            Terms &amp; Conditions
+            Terms & Conditions
           </h2>
           <p className="mt-0.5 text-[11.5px] uppercase tracking-widest text-slate-700">
             Please review the following terms. They form part of your confirmed booking.

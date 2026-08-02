@@ -65,8 +65,8 @@ function PreviewPage() {
                     : "";
 
               const fileName = suffix
-                ? `${booking.customer.title} {booking.customer.name} ${suffix} Booking Confirmation`
-                : `${booking.customer.title} {booking.customer.name} Booking Confirmation`;
+                ? `${booking.customer.title} ${booking.customer.name} ${suffix} Booking Confirmation`
+                : `${booking.customer.title} ${booking.customer.name} Booking Confirmation`;
 
               const previousTitle = document.title;
               document.title = fileName;
@@ -77,9 +77,9 @@ function PreviewPage() {
                 document.title = previousTitle;
               }, 1000);
             }}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#0DA0FD] px-3 py-2 text-sm font-semibold text-white transition hover:opacity-90 md:px-5 md:py-2.5"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#0539bc] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#0539bc]/90 md:px-5 md:py-2.5"
           >
-            <Printer className="h-8 w-8" />
+            <Printer className="h-4 w-4" />
 
             <span className="hidden sm:inline">Print / Save as PDF</span>
 

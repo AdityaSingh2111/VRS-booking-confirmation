@@ -34,7 +34,7 @@ export function LoadingScreen({ title = "Preparing Your Booking" }: LoadingScree
         <p className="mt-3 text-sm text-slate-700">{messages[messageIndex]}</p>
 
         <div className="mt-8 h-2 overflow-hidden rounded-full bg-slate-200">
-          <div className="loading-bar h-full rounded-full bg-gradient-to-r from-[#0DA0FD] to-[#FA8835]" />
+          <div className="loading-bar h-full rounded-full bg-gradient-to-r from-[#0539bc] to-[#ef4b05]" />
         </div>
 
         <p className="mt-6 text-sm text-slate-600">Please wait a moment...</p>

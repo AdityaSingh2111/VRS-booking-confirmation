@@ -15,7 +15,6 @@ import { BookingData } from "@/types/booking";
 
 export function BookingForm() {
   const formData = useBookingStore((state) => state.formData);
-  const [showResetDialog, setShowResetDialog] = useState(false);
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -129,7 +128,7 @@ export function BookingForm() {
           clearAll();
           reset(defaultBookingValues);
         }}
-      />{" "}
+      />
     </form>
   );
 }

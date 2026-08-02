@@ -7,6 +7,7 @@
 import React from "react";
 import {
   BadgeCheck,
+  CheckCircle2,
   CalendarDays,
   CircleUserRound,
   Headphones,
@@ -57,9 +58,8 @@ function BookingDetailItem({
 }) {
   return (
     <div
-      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-1 ${
-        highlight ? "booking-detail-highlight" : ""
-      }`}
+      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-1 ${highlight ? "booking-detail-highlight" : ""
+        }`}
     >
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
@@ -71,16 +71,16 @@ function BookingDetailItem({
         {icon}
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-[6.8px] font-semibold uppercase tracking-[0.18em] text-slate-700/75">
+        <p className="text-[7.5px] font-semibold uppercase tracking-[0.18em] text-slate-700">
           {label}
         </p>
-        <p className="mt-0.5 truncate text-[12.5px] font-bold leading-none text-foreground">
+        <p className="mt-0.5 truncate text-[12px] font-semibold leading-none text-foreground">
           {value}
         </p>
       </div>
       {highlight && (
         <span
-          className="shrink-0 rounded-sm border px-1.5 py-0.5 text-[6.8px] font-bold uppercase tracking-[0.14em]"
+          className="shrink-0 rounded-sm border px-1.5 py-0.5 text-[7.5px] font-bold uppercase tracking-[0.14em]"
           style={{
             borderColor: "rgb(250 136 53 / 0.28)",
             color: "var(--brand-orange)",
@@ -106,9 +106,8 @@ function CustomerDetailItem({
 }) {
   return (
     <div
-      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-1 ${
-        prominent ? "customer-detail-prominent" : ""
-      }`}
+      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-1 ${prominent ? "customer-detail-prominent" : ""
+        }`}
     >
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
@@ -120,10 +119,10 @@ function CustomerDetailItem({
         {icon}
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-[6.8px] font-semibold uppercase tracking-[0.18em] text-slate-700/75">
+        <p className="text-[7.5px] font-semibold uppercase tracking-[0.18em] text-slate-700">
           {label}
         </p>
-        <p className="mt-0.5 truncate text-[12.5px] font-semibold leading-none text-foreground">
+        <p className="mt-0.5 truncate text-[12px] font-semibold leading-none text-foreground">
           {value}
         </p>
       </div>
@@ -140,7 +139,6 @@ interface PageOneProps {
 export function PageOne({ booking }: PageOneProps) {
   return (
     <article className="sheet page-one mx-auto flex flex-col rounded-sm p-[15mm]">
-      {/* <Watermark /> */}
       <div className="relative z-[1] flex min-h-full flex-1 flex-col">
         <DocHeader />
 
@@ -213,13 +211,13 @@ export function PageOne({ booking }: PageOneProps) {
               <div className="min-w-0">
                 <div className="flex items-center gap-3">
                   <span
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border bg-white"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border bg-white shadow-xs"
                     style={{
                       borderColor: "rgb(34 197 94 / 0.35)",
                       color: "var(--brand-green)",
                     }}
                   >
-                    <BadgeCheck className="h-6 w-6" strokeWidth={1.8} />
+                    <CheckCircle2 className="h-6 w-6" strokeWidth={2.2} />
                   </span>
                   <div className="min-w-0">
                     <p
@@ -228,14 +226,14 @@ export function PageOne({ booking }: PageOneProps) {
                     >
                       Reservation Status
                     </p>
-                    <h1 className="font-serif text-[29px] font-semibold uppercase leading-none tracking-normal text-foreground">
+                    <h1 className="font-serif text-[28px] font-semibold uppercase leading-none tracking-tight text-foreground">
                       Booking Confirmed
                     </h1>
                   </div>
                 </div>
 
                 <p
-                  className="mt-1.5 text-[12.5px] font-semibold leading-tight"
+                  className="mt-1.5 text-[12px] font-semibold leading-tight"
                   style={{ color: "var(--brand-green)" }}
                 >
                   Your booking has been successfully confirmed.
@@ -243,7 +241,7 @@ export function PageOne({ booking }: PageOneProps) {
 
                 <div className="mt-2 max-w-[128mm]">
                   <p className="text-[11.5px] font-semibold leading-tight text-foreground">
-                    Dear {booking.customer.title} {booking.customer.name},{" "}
+                    {booking.customer.title} {booking.customer.name},
                   </p>
                   <p className="mt-0.5 text-[11.5px] leading-[1.45] text-slate-700">
                     Thank you for choosing {company.nameFull}. Your move is now in careful hands,
@@ -256,8 +254,8 @@ export function PageOne({ booking }: PageOneProps) {
                   {heroChips.map((c) => (
                     <span
                       key={c}
-                      className="inline-flex items-center gap-1 rounded-sm border bg-white/70 px-2 py-1 text-[8px] font-semibold uppercase tracking-wider text-foreground/75"
-                      style={{ borderColor: "rgb(34 197 94 / 0.22)" }}
+                      className="inline-flex items-center gap-1 rounded-sm border bg-white/80 px-2 py-0.5 text-[8px] font-semibold uppercase tracking-wider text-slate-700"
+                      style={{ borderColor: "rgb(34 197 94 / 0.25)" }}
                     >
                       <Check
                         className="h-2.5 w-2.5"
@@ -279,7 +277,7 @@ export function PageOne({ booking }: PageOneProps) {
         <div className="grid grid-cols-2 gap-1.5 pt-1.5">
           <Card
             title="Booking Details"
-            icon={<CalendarDays className="h-3.5 w-3.5" />}
+            icon={<CalendarDays className="h-4 w-4" />}
             className="page-one-card booking-details-card"
           >
             <div className="booking-details-grid grid grid-cols-2 gap-x-3">
@@ -368,7 +366,7 @@ export function PageOne({ booking }: PageOneProps) {
               {booking.delivery.address}
             </p>
             <p className="address-note mt-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-slate-700">
-              Our team will delivered at the scheduled time slot.
+              Our team will deliver by the scheduled date.
             </p>
           </Card>
         </div>
@@ -427,7 +425,7 @@ export function PageOne({ booking }: PageOneProps) {
             </header>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-0.5">
               {nextSteps.map((s) => (
-                <li key={s} className="flex gap-2 text-[11px] leading-[1.45] text-foreground/80">
+                <li key={s} className="flex gap-2 text-[11px] leading-[1.45] text-slate-600">
                   <Check
                     className="mt-[2px] h-3 w-3 shrink-0"
                     strokeWidth={3}
@@ -441,51 +439,51 @@ export function PageOne({ booking }: PageOneProps) {
         </div>
 
         {/* ── Customer Support ── */}
-        <div className="mt-2 border-t border-slate-300 pt-3">
+        <div className="mt-2 border-t border-hairline pt-3">
           <h3
-            className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em]"
+            className="mb-2 font-serif text-[11px] font-semibold uppercase tracking-[0.15em]"
             style={{ color: "var(--brand-blue)" }}
           >
             Customer Support
           </h3>
 
-          <div className="flex items-start justify-between">
+          <div className="flex items-center justify-between">
             {/* Left */}
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-slate-700" />
-                <span className="text-[11px] font-semibold">+91 93440 07343</span>
+                <span className="text-[11px] font-semibold">{contact.phone}</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-slate-700" />
-                <span className="text-[11px]">info@vrscargopackers.com</span>
+                <span className="text-[11px] text-slate-700">{contact.email}</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <Globe className="h-3.5 w-3.5 text-slate-700" />
-                <span className="text-[11px]">vrscargopackers.com</span>
+                <span className="text-[11px] text-slate-700">{contact.website}</span>
               </div>
             </div>
 
             {/* Right */}
-            <div className="flex flex-col items-center -mt-8">
+            <div className="flex flex-col items-center">
               <p
-                className="mb-1 text-center text-[8px] font-semibold uppercase tracking-[0.15em]"
+                className="mb-1 text-center text-[7.5px] font-semibold uppercase tracking-[0.15em]"
                 style={{ color: "var(--brand-blue)" }}
               >
                 SCAN TO VERIFY BOOKING
               </p>
 
-              <div className="rounded-lg border border-slate-300 bg-white p-1.5 shadow-sm">
-                <QRCode value={contact.websiteUrl} size={64} bgColor="#ffffff" fgColor="#000000" />
+              <div className="rounded-md border border-hairline bg-white p-1 shadow-sm">
+                <QRCode value={contact.websiteUrl} size={56} bgColor="#ffffff" fgColor="#000000" />
               </div>
             </div>
           </div>
         </div>
 
         {/* ── Trust Ribbon ── */}
-        <div className="mb-1.5 mt-2.5 grid grid-cols-6 gap-1.5 border-t border-hairline pt-2.5">
+        <div className="my-2.5 grid grid-cols-6 gap-1.5 border-t border-hairline pt-2.5">
           {trustBadges.map(({ icon: iconName, label }) => {
             const Icon = iconMap[iconName];
             if (!Icon) return null;

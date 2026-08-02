@@ -58,7 +58,7 @@ export function DocHeader({ compact = false }: { compact?: boolean }) {
       </header>
       {/* Brand-colored divider line */}
       <div
-        className="h-[1.5px] w-full rounded-full"
+        className="h-[2px] w-full rounded-full"
         style={{
           background: "linear-gradient(90deg, var(--brand-blue), var(--brand-orange))",
         }}
@@ -86,7 +86,7 @@ export function Card({
 }) {
   return (
     <section
-      className={`relative border-y border-border py-4 ${className}`}
+      className={`relative border-y border-border py-3 ${className}`}
       style={{
         pageBreakInside: "avoid",
         breakInside: "avoid",
@@ -186,7 +186,7 @@ export function TermsCard({
       {points && (
         <ul className="mt-2.5 grid grid-cols-2 gap-x-6 gap-y-1.5">
           {points.map((p) => (
-            <li key={p} className="flex gap-2 text-[11.5px] leading-[1.55] text-foreground/85">
+            <li key={p} className="flex gap-2 text-[11.5px] leading-[1.55] text-slate-700">
               <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
               <span>{p}</span>
             </li>
@@ -198,7 +198,7 @@ export function TermsCard({
           {chips.map((c) => (
             <span
               key={c}
-              className="rounded-none border border-hairline bg-transparent px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-foreground/75"
+              className="rounded-sm border border-hairline bg-transparent px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-slate-600"
             >
               {c}
             </span>
@@ -267,9 +267,6 @@ export function Footer({ page }: { page: number }) {
                 {contact.email}
               </span>
             </div>
-          </div>
-          <div className="text-[8.5px] font-semibold text-slate-700">
-            Page {page} of {doc.totalPages}
           </div>
         </div>
         <p className="mt-1.5 border-t border-hairline pt-1.5 text-center text-[8.5px] text-slate-700">

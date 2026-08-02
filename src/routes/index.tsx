@@ -70,8 +70,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="py-10">
-      <div className="no-print mx-auto mb-6 flex w-[210mm] max-w-full items-center justify-between px-4"></div>
-
       <div className="mx-auto max-w-6xl px-4">
         <BookingForm />
       </div>

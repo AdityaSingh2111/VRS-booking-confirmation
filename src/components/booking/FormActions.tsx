@@ -18,7 +18,7 @@ export function FormActions({ onReset }: FormActionsProps) {
 
       <button
         type="submit"
-        className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+        className="inline-flex items-center gap-2 rounded-lg bg-[#0539bc] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0539bc]/90"
       >
         <FileText className="h-4 w-4" />
         Generate PDF

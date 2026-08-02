@@ -6,7 +6,7 @@
 
 // ─── Brand Colors ────────────────────────────────────────────────
 export const brand = {
-  blue: "#0427b1",
+  blue: "#0539bc",
   orange: "#ef4b05",
   green: "#08cc50",
 } as const;
