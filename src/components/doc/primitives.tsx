@@ -113,7 +113,7 @@ export function Card({
     >
       {accent && (
         <div
-          className="absolute left-0 top-0 h-full w-[3px] rounded-full"
+          className="absolute left-0 top-0 h-full w-[2px] rounded-full"
           style={{ backgroundColor: "var(--brand-orange)" }}
         />
       )}
@@ -121,7 +121,7 @@ export function Card({
         <header className="mb-3 flex items-center gap-2">
           {icon && <span style={{ color: "var(--brand-blue)" }}>{icon}</span>}
           <h3
-            className="font-serif text-[11px] font-semibold uppercase tracking-[0.15em]"
+            className="font-serif text-[11px] font-bold uppercase underline decoration-[1.2px] tracking-[0.15em]"
             style={{ color: "var(--brand-blue)" }}
           >
             {title}
@@ -185,38 +185,38 @@ export function TermsCard({
 }) {
   return (
     <section
-      className="border-y border-border py-4"
+      className="border-y border-border py-3"
       style={{
         pageBreakInside: "avoid",
         breakInside: "avoid",
       }}
     >
-      <header className="mb-3 flex items-center gap-2">
+      <header className="mb-1 flex items-center gap-2">
         {icon && <span style={{ color: "var(--brand-blue)" }}>{icon}</span>}
         <h3
-          className="font-serif text-[11px] font-semibold uppercase tracking-[0.15em]"
+          className="font-serif text-[12px] font-extrabold uppercase underline decoration-[1.5px] underline-offset-2 tracking-[0.16em]"
           style={{ color: "var(--brand-blue)" }}
         >
-          <span className="mr-1.5">{index}</span>
+          <span className="mr-3.5">{index}</span>
           {title}
         </h3>
       </header>
       {points && (
-        <ul className="mt-2.5 grid grid-cols-2 gap-x-6 gap-y-1.5">
+        <ul className="mt-1.5 grid grid-cols-2 gap-x-6 gap-y-0.5">
           {points.map((p) => (
-            <li key={p} className="flex gap-2 text-[11.5px] leading-[1.55] text-slate-700">
-              <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
+            <li key={p} className="flex gap-2 text-[12.5px] leading-[1.45] text-slate-900">
+              <span className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
               <span>{p}</span>
             </li>
           ))}
         </ul>
       )}
       {chips && (
-        <div className="mt-2.5 flex flex-wrap gap-1.5">
+        <div className="mt-1.5 flex flex-wrap gap-1.5">
           {chips.map((c) => (
             <span
               key={c}
-              className="rounded-sm border border-hairline bg-transparent px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-slate-600"
+              className="rounded-sm border border-hairline bg-transparent px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-slate-800"
             >
               {c}
             </span>
@@ -224,7 +224,7 @@ export function TermsCard({
         </div>
       )}
       {note && (
-        <p className="mt-4 border-t border-hairline pt-3 text-[9.5px] leading-[1.65] text-slate-700">
+        <p className="mt-5 border-t border-hairline pt-2 text-[12px] leading-[1.65] text-slate-700">
           {note}
         </p>
       )}
@@ -248,38 +248,38 @@ export function Footer({ page }: { page: number }) {
       />
       <div className="pt-3">
         <div className="flex items-center justify-between gap-4">
-          <div className="grid flex-1 grid-cols-4 gap-4">
+          <div className="grid flex-1 grid-cols-4 gap-2">
             <div className="flex items-center gap-2">
-              <Globe className="h-3 w-3 text-slate-700" />
+              <Globe className="h-3 w-3 text-slate-900" />
               <span
-                className="truncate text-[8.5px] font-semibold"
+                className="truncate text-[10.5px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.website}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="h-3 w-3 text-slate-700" />
+              <Phone className="h-3 w-3 text-slate-900" />
               <span
-                className="truncate text-[8.5px] font-semibold"
+                className="truncate text-[10.5px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.phone}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <PhoneCall className="h-3 w-3 text-slate-700" />
+              <PhoneCall className="h-3 w-3 text-slate-900" />
               <span
-                className="truncate text-[8.5px] font-semibold"
+                className="truncate text-[10.5px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
-                {contact.tollFree}
+                {contact.phone2}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="h-3 w-3 text-slate-700" />
+              <Mail className="h-3 w-3 text-slate-900" />
               <span
-                className="truncate text-[8.5px] font-semibold"
+                className="truncate text-[10.5px] font-extrabold"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.email}
@@ -287,7 +287,7 @@ export function Footer({ page }: { page: number }) {
             </div>
           </div>
         </div>
-        <p className="mt-1.5 border-t border-hairline pt-1.5 text-center text-[8.5px] text-slate-700">
+        <p className="mt-4.5 border-t border-hairline pt-2.5 text-center text-[10.5px] text-slate-700">
           {doc.copyright} · {doc.generatedNote}
         </p>
       </div>

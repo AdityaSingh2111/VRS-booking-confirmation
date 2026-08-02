@@ -23,7 +23,7 @@ export const paymentTerms: TermsSection = {
   title: "Payment Terms",
   icon: "CreditCard",
   points: [
-    "Booking is confirmed only after receipt of the advance payment.",
+    "Booking will be confirmed only after receipt of the agreed advance payment.",
     "Advance payment will be adjusted against the final invoice.",
     "Balance payment must be made before dispatch of the consignment.",
     "Additional services requested after booking will attract additional charges.",
@@ -40,8 +40,8 @@ export const serviceTerms: TermsSection = {
     "Professional packing using quality packing materials.",
     "Safe loading and unloading by trained staff.",
     "Secure transportation throughout transit.",
-    "Estimated delivery timelines are subject to operational conditions.",
-    "Customer cooperation is required during pickup and delivery.",
+    "Estimated delivery timelines are subject to operational conditions and unforeseen circumstances.",
+    "Customer cooperation is required during and prior to both pickup and delivery.",
     "Rescheduling: Any changes to the booking schedule must be communicated in advance.",
   ],
 };
@@ -51,7 +51,7 @@ export const cancellationPolicy: TermsSection = {
   title: "Cancellation Policy",
   icon: "CalendarX2",
   points: [
-    "Customer-initiated cancellations are non-refundable.",
+    "Advance payment is non-refundable in case of customer-initiated cancellations.",
     "If the cancellation is due to the company's fault, a full refund will be provided.",
     "Approved refunds will be processed within 2–3 working days.",
     "If cancelled during pickup or loading, applicable service and operational charges will apply.",
@@ -79,7 +79,7 @@ export const restrictedItems: TermsSection = {
     "narcotics",
     "Government restricted items",
   ],
-  note: "The above items must not be handed over for packing or transportation under any circumstances. The company shall bear no liability for any such undeclared items.",
+  note: "Fragile valuables(unless declared in advance) & the above items must not be handed over for packing or transportation under any circumstances. The company shall bear no liability for any such undeclared items.",
 };
 
 export const jurisdiction: TermsSection = {

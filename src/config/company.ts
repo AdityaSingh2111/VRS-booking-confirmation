@@ -24,6 +24,7 @@ export const company = {
 // ─── Contact Information ─────────────────────────────────────────
 export const contact = {
   phone: "+91 93440 07343",
+  phone2: "+91 93449 07343",
   tollFree: "04446279150",
   email: "info@vrscargopackers.com",
   website: "vrscargopackers.com",
@@ -33,7 +34,7 @@ export const contact = {
 // ─── Document Metadata ──────────────────────────────────────────
 export const doc = {
   title: `VRS Cargo Booking Confirmation | ${company.nameFull}`,
-  description: "Premium booking confirmation document for VRS Cargo Packers and Movers.",
+  description: "Premium booking confirmation document generator for VRS Cargo Packers and Movers.",
   totalPages: 2,
   copyright: `© ${new Date().getFullYear()} ${company.legalName}. All rights reserved.`,
   generatedNote: "This is a computer-generated booking confirmation.",
