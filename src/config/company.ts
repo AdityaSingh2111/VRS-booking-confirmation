@@ -32,7 +32,7 @@ export const contact = {
 
 // ─── Document Metadata ──────────────────────────────────────────
 export const doc = {
-  title: `VRS CargoBooking Confirmation | ${company.nameFull}`,
+  title: `VRS Cargo Booking Confirmation | ${company.nameFull}`,
   description:
     "Premium booking confirmation document for VRS Cargo Packers and Movers.",
   totalPages: 2,
