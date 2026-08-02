@@ -368,7 +368,7 @@ export function PageOne({ booking }: PageOneProps) {
               {booking.delivery.address}
             </p>
             <p className="address-note mt-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-slate-700">
-              Delivery subject to route and access conditions.
+              Our team will delivered at the scheduled time slot.
             </p>
           </Card>
         </div>
