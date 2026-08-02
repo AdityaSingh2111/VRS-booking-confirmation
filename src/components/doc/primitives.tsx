@@ -33,15 +33,15 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       <img
         src={logo}
         alt="VRS Cargo Packers & Movers"
-        className={compact ? "h-16 w-auto -mt-2" : "h-17 w-auto -mt-3"}
+        className={compact ? "h-26 w-auto -mt-10" : "h-26 w-auto -mt-10"}
       />
 
-      <p
+      {/* <p
         className="mt-1 text-[8px] font-semibold uppercase tracking-[0.28em]"
         style={{ color: "var(--brand-blue)" }}
       >
         {company.tagline}
-      </p>
+      </p> */}
     </div>
   );
 }
@@ -135,9 +135,8 @@ export function Field({
       <div className="min-w-0">
         <p className="text-[7.5px] uppercase tracking-widest text-slate-700">{label}</p>
         <p
-          className={`mt-0.5 truncate text-[12px] ${
-            strong ? "font-semibold text-foreground" : "font-semibold text-foreground/90"
-          }`}
+          className={`mt-0.5 truncate text-[12px] ${strong ? "font-semibold text-foreground" : "font-semibold text-foreground/90"
+            }`}
         >
           {value}
         </p>
