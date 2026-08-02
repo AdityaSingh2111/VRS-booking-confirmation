@@ -76,62 +76,6 @@ export function AddressCard({
 
         <div className="grid grid-cols-2 gap-4">
 
-          <FormInput
-            label="City"
-            placeholder="City"
-            register={register(
-              `${prefix}City` as Path<BookingFormValues>
-            )}
-            error={
-              errors[
-                `${prefix}City` as keyof BookingFormValues
-              ]?.message as string
-            }
-          />
-
-          <FormInput
-            label="State"
-            placeholder="State"
-            register={register(
-              `${prefix}State` as Path<BookingFormValues>
-            )}
-            error={
-              errors[
-                `${prefix}State` as keyof BookingFormValues
-              ]?.message as string
-            }
-          />
-
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-
-          <FormInput
-            label="PIN Code"
-            placeholder="600001"
-            register={register(
-              `${prefix}Pin` as Path<BookingFormValues>
-            )}
-            error={
-              errors[
-                `${prefix}Pin` as keyof BookingFormValues
-              ]?.message as string
-            }
-          />
-
-          <FormInput
-            label="Landmark"
-            placeholder="Near..."
-            register={register(
-              `${prefix}Landmark` as Path<BookingFormValues>
-            )}
-            error={
-              errors[
-                `${prefix}Landmark` as keyof BookingFormValues
-              ]?.message as string
-            }
-          />
-
         </div>
 
       </div>

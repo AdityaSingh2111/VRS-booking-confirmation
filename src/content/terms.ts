@@ -25,8 +25,9 @@ export const paymentTerms: TermsSection = {
   points: [
     "Booking is confirmed only after receipt of the advance payment.",
     "Advance payment will be adjusted against the final invoice.",
-    "Balance payment shall be made before unloading unless otherwise agreed.",
+    "Balance payment must be made before dispatch of the consignment.",
     "Additional services requested after booking will attract additional charges.",
+    "Payment after delivery (COD) is not applicable unless approved by the company in writing.",
     "Taxes shall be applicable as per prevailing Government regulations.",
   ],
 };
@@ -41,6 +42,7 @@ export const serviceTerms: TermsSection = {
     "Secure transportation throughout transit.",
     "Estimated delivery timelines are subject to operational conditions.",
     "Customer cooperation is required during pickup and delivery.",
+    "Rescheduling: Any changes to the booking schedule must be communicated in advance.",
   ],
 };
 
@@ -49,12 +51,12 @@ export const cancellationPolicy: TermsSection = {
   title: "Cancellation Policy",
   icon: "CalendarX2",
   points: [
-    "Cancellation more than 48 hours before shifting: advance refunded in full.",
-    "Cancellation within 24–48 hours: 50% of the advance is retained.",
-    "Cancellation within 24 hours: the advance is non-refundable.",
-    "Cancellation after vehicle dispatch: dispatch and handling charges apply.",
-    "Refund timeline: refunds are processed within 7–10 working days.",
-    "Rescheduling: one free rescheduling is permitted, subject to availability.",
+    "Customer-initiated cancellations are non-refundable.",
+    "If the cancellation is due to the company's fault, a full refund will be provided.",
+    "Approved refunds will be processed within 2–3 working days.",
+    "If cancelled during pickup or loading, applicable service and operational charges will apply.",
+    "No cancellation or refund will be accepted after pickup, loading, or dispatch.",
+    "By confirming the booking, the customer agrees to this cancellation policy.",
   ],
 };
 
@@ -74,6 +76,8 @@ export const restrictedItems: TermsSection = {
     "Hazardous Chemicals",
     "Flammable Materials",
     "Perishable Goods",
+    "narcotics",
+    "Government restricted items",
   ],
   note: "The above items must not be handed over for packing or transportation under any circumstances. The company shall bear no liability for any such undeclared items.",
 };

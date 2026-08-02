@@ -23,23 +23,7 @@ const bookingSchema = z
 
     pickupAddress: z.string().min(5),
 
-    pickupCity: z.string(),
-
-    pickupState: z.string(),
-
-    pickupPin: z.string(),
-
-    pickupLandmark: z.string().optional(),
-
     deliveryAddress: z.string().min(5),
-
-    deliveryCity: z.string(),
-
-    deliveryState: z.string(),
-
-    deliveryPin: z.string(),
-
-    deliveryLandmark: z.string().optional(),
 
     totalAmount: z.coerce.number(),
 
@@ -76,16 +60,8 @@ export const defaultBookingValues: BookingFormValues = {
   serviceType: "Household Shifting",
 
   pickupAddress: "",
-  pickupCity: "",
-  pickupState: "",
-  pickupPin: "",
-  pickupLandmark: "",
 
   deliveryAddress: "",
-  deliveryCity: "",
-  deliveryState: "",
-  deliveryPin: "",
-  deliveryLandmark: "",
 
   totalAmount: 0,
   advancePaid: 0,
