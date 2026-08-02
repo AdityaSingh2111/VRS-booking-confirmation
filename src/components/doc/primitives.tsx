@@ -5,7 +5,7 @@
  */
 
 import type { ReactNode } from "react";
-import { Globe, Phone, PhoneCall, Mail } from "lucide-react";
+import { Globe, Phone, PhoneCall, Mail, Clock3 } from "lucide-react";
 import { company, contact, doc } from "@/config/company";
 import logo from "@/assets/logo.webp";
 /* ═══════════════════════════════════════════════════════════════════
@@ -33,7 +33,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       <img
         src={logo}
         alt="VRS Cargo Packers & Movers"
-        className={compact ? "h-26 w-auto -mt-10" : "h-26 w-auto -mt-10"}
+        className={compact ? "h-28 w-auto -mt-12" : "h-28 w-auto -mt-12"}
       />
 
       {/* <p
@@ -53,8 +53,27 @@ export function Logo({ compact = false }: { compact?: boolean }) {
 export function DocHeader({ compact = false }: { compact?: boolean }) {
   return (
     <div className="-mt-1 flex flex-col">
-      <header className="flex items-center pb-3">
+      <header className="flex items-center justify-between pb-2">
         <Logo compact={compact} />
+
+        <div className="flex flex-col items-end text-right">
+          <div className="flex items-center gap-1.5">
+            <PhoneCall className="h-7.5 w-4.5" style={{ color: "var(--brand-blue)" }} />
+            <span className="text-[11.5px] font-semibold uppercase tracking-[0.24em] text-slate-700">
+              Toll Free:
+            </span>
+            <span className="text-[17px] font-bold leading-none text-slate-900">
+              1800 270 9949
+            </span>
+          </div>
+
+          <div className="mt-2 flex items-center gap-1.5">
+            <Clock3 className="h-7.5 w-4.5" style={{ color: "var(--brand-orange)" }} />
+            <span className="text-[12.5px] font-semibold tracking-[0.074em] text-slate-600">
+              Support Time:<span className="font-extrabold text-slate-900"> 9:00 AM – 6:00 PM</span>
+            </span>
+          </div>
+        </div>
       </header>
       {/* Brand-colored divider line */}
       <div
