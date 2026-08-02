@@ -18,7 +18,7 @@ export function Watermark() {
       className="pointer-events-none absolute inset-0 flex items-center justify-center"
       aria-hidden="true"
     >
-      <img src={logo} alt="" className="w-[360px] opacity-[0.05] select-none" />
+      <img src={logo} alt="" className="w-[360px] opacity-[0.09] select-none" />
     </div>
   );
 }
