@@ -1,5 +1,5 @@
 ﻿/**
- * Booking Executive constants — 30 executives.
+ * Booking Executive constants.
  * Add or remove executives here; no component changes needed.
  */
 

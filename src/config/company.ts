@@ -39,8 +39,8 @@ export const contact = {
 
 // ─── Document Metadata ──────────────────────────────────────────
 export const doc = {
-  title: `VRS Cargo Booking Confirmation | ${company.nameFull}`,
-  description: "Premium booking confirmation document generator for VRS Cargo Packers and Movers.",
+  title: `${company.name} Booking Confirmation | ${company.nameFull}`,
+  description: `Premium booking confirmation document generator for ${company.nameFull}.`,
   totalPages: 2,
   copyright: `© ${new Date().getFullYear()} ${company.legalName}. All rights reserved.`,
   generatedNote: "This is a computer-generated booking confirmation.",
