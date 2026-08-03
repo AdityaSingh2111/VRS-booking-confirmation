@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 
 import { BookingData } from "@/types/booking";
 import { BookingFormValues } from "@/hooks/useBookingForm";
@@ -21,34 +22,43 @@ interface BookingStore {
   clearAll: () => void;
 }
 
-export const useBookingStore = create<BookingStore>((set) => ({
-  booking: null,
-
-  formData: null,
-
-  setBooking: (booking) =>
-    set({
-      booking,
-    }),
-
-  setFormData: (formData) =>
-    set({
-      formData,
-    }),
-
-  clearBooking: () =>
-    set({
+export const useBookingStore = create<BookingStore>()(
+  persist(
+    (set) => ({
       booking: null,
-    }),
 
-  clearFormData: () =>
-    set({
       formData: null,
-    }),
 
-  clearAll: () =>
-    set({
-      booking: null,
-      formData: null,
+      setBooking: (booking) =>
+        set({
+          booking,
+        }),
+
+      setFormData: (formData) =>
+        set({
+          formData,
+        }),
+
+      clearBooking: () =>
+        set({
+          booking: null,
+        }),
+
+      clearFormData: () =>
+        set({
+          formData: null,
+        }),
+
+      clearAll: () =>
+        set({
+          booking: null,
+          formData: null,
+        }),
     }),
-}));
+    {
+      name: "vrs-booking-store",
+
+      storage: createJSONStorage(() => sessionStorage),
+    },
+  ),
+);
