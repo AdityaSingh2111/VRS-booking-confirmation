@@ -4,11 +4,14 @@
  * Change a value here and it updates everywhere.
  */
 
+import logo from "@/assets/logo.webp";
+
 // ─── Brand Colors ────────────────────────────────────────────────
 export const brand = {
   blue: "#0539bc",
   orange: "#ef4b05",
   green: "#08cc50",
+  primary: "#0539bc",
 } as const;
 
 // ─── Company Identity ────────────────────────────────────────────
@@ -21,6 +24,7 @@ export const company = {
   iso: "ISO 9001:2015",
   /** Court jurisdiction for terms & conditions. */
   jurisdiction: "Chennai, Tamil Nadu, India",
+  logo,
 } as const;
 
 // ─── Contact Information ─────────────────────────────────────────

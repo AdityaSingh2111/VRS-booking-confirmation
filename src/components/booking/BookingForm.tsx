@@ -9,6 +9,7 @@ import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { PaymentSection } from "./PaymentSection";
 import { FormActions } from "./FormActions";
 
+import { company } from "@/config/company";
 import { BookingFormValues, useBookingForm } from "@/hooks/useBookingForm";
 import { useBookingStore } from "@/store/bookingStore";
 import { BookingData } from "@/types/booking";
@@ -95,17 +96,23 @@ export function BookingForm() {
     });
   };
   if (loading) {
-  return (
-    <LoadingScreen />
-  );
-}
+    return (
+      <LoadingScreen />
+    );
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div className="rounded-2xl border bg-white p-6 shadow-sm">
-        <h1 className="text-3xl font-bold tracking-tight">Booking Generator</h1>
+      <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+        <div className="absolute top-0 inset-x-0 h-1 bg-brand-blue" />
+        <img
+          src={company.logo}
+          alt={company.name}
+          className="mx-auto mb-4 h-14 w-auto object-contain"
+        />
+        <h1 className="text-3xl font-bold tracking-tight text-slate-900">Booking Generator</h1>
 
         <p className="mt-2 text-sm text-slate-700">
-          Fill in the customer details below to generate a Booking Confirmation document.
+          Fill in the details below to generate a Booking Confirmation document
         </p>
       </div>
       <CustomerSection register={register} errors={errors} />

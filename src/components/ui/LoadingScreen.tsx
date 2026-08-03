@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.webp";
 import { company } from "@/config/company";
 import { loadingMessages } from "@/config/services";
 
@@ -21,7 +20,7 @@ export function LoadingScreen({ title = "Preparing Your Booking" }: LoadingScree
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
       <div className="w-full max-w-md px-8 text-center">
-        <img src={logo} alt={company.name} className="mx-auto h-20 w-auto animate-pulse" />
+        <img src={company.logo} alt={company.name} className="mx-auto h-20 w-auto animate-pulse" />
 
         <h1 className="mt-8 text-2xl font-bold text-slate-800">{title}</h1>
 
