@@ -241,11 +241,11 @@ export function Footer() {
       />
       <div className="px-3 py-2">
         <div className="flex items-center justify-between gap-4">
-          <div className="grid flex-1 grid-cols-4 gap-2">
+          <div className="flex flex-1 flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <Globe className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10px] font-extrabold"
+                className="text-[10px] font-extrabold whitespace-nowrap"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.website}
@@ -254,7 +254,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Phone className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10px] font-extrabold"
+                className="text-[10px] font-extrabold whitespace-nowrap"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.phone}
@@ -263,7 +263,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <PhoneCall className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10px] font-extrabold"
+                className="text-[10px] font-extrabold whitespace-nowrap"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.phone2}
@@ -272,7 +272,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Mail className="h-3 w-3 text-slate-700" />
               <span
-                className="truncate text-[10px] font-extrabold"
+                className="text-[10px] font-extrabold whitespace-nowrap"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {contact.email}
