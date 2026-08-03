@@ -1,29 +1,59 @@
-# Welcome to your Lovable project
+# Packers & Movers Booking Confirmation Template
 
-This project was built with [Lovable](https://lovable.dev).
+An enterprise-grade, white-label booking confirmation PDF generator template. Fully decoupled from company-specific identities, allowing quick rebranding by modifying configuration files alone without editing component logic.
 
-## Build with Lovable
+---
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## 🚀 Rebranding Guide (White-Label Setup)
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+To configure this application for a new company, update **only** the following files:
 
-## Development
+### 1. Business & Identity Config
+* **[company.ts](file:///c:/VRS/booking-confirmation/src/config/company.ts)**: Company names, GST, ISO certifications, court jurisdiction, and support details.
+* **[services.ts](file:///c:/VRS/booking-confirmation/src/config/services.ts)**: Available service types, accepted payment methods, and default form values.
+* **[executives.ts](file:///c:/VRS/booking-confirmation/src/config/executives.ts)**: Booking executives directory.
+* **[seo.ts](file:///c:/VRS/booking-confirmation/src/config/seo.ts)**: Deployment URLs and metadata for OpenGraph/SEO preview.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### 2. Styles & Branding assets
+* **[styles.css](file:///c:/VRS/booking-confirmation/src/styles.css)**: Set primary, accent, and brand variables under `:root`:
+  ```css
+  --brand-blue: #new-color;
+  --brand-orange: #new-color;
+  --brand-green: #new-color;
+  ```
+* **Logo**: Replace `src/assets/logo.webp` with your company logo.
+* **Favicon**: Replace `public/favicon.ico`.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+---
+
+## 🛠️ Technical Stack
+
+- **Core**: React 19 + TypeScript (Strict Mode)
+- **Routing**: TanStack Router (File-based)
+- **State Management**: Zustand
+- **Forms & Validation**: React Hook Form + Zod
+- **Styling**: Tailwind CSS v4 + Vanilla CSS print layout (tuned for pixel-perfect A4 portrait prints)
+- **Framework**: TanStack Start
+
+---
+
+## 💻 Local Development
+
+### Prerequisites
+Make sure you have Node.js and npm installed.
+
+### Setup
+```bash
+# Clone the repository
+git clone <repository-url>
+cd booking-confirmation
+
+# Install dependencies
+npm install
+
+# Start local development server
 npm run dev
+
+# Build for production
+npm run build
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS

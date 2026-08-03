@@ -6,32 +6,16 @@
  * Editing terms never requires touching this file.
  */
 import React from "react";
-import { CreditCard, PackageCheck, CalendarX2, ShieldAlert, Scale } from "lucide-react";
 import { DocHeader, Footer, TermsCard, Watermark } from "./primitives";
 import { allTermsSections } from "@/content/terms";
-import { BookingData } from "@/types/booking";
-/** Map icon name strings → Lucide components */
-const iconMap: Record<
-  string,
-  React.FC<React.SVGProps<SVGSVGElement> & { strokeWidth?: number }>
-> = {
-  CreditCard,
-  PackageCheck,
-  CalendarX2,
-  ShieldAlert,
-  Scale,
-};
-interface PageTwoProps {
-  booking: BookingData;
-}
+import { iconMap } from "@/lib/icon-map";
 
-export function PageTwo({ booking }: PageTwoProps) {
-  void booking;
+export function PageTwo() {
   return (
     <article className="sheet mx-auto flex flex-col rounded-sm p-[12mm]">
       <Watermark />
       <div className="relative z-[1] flex min-h-full flex-1 flex-col">
-        <DocHeader compact />
+        <DocHeader />
 
         <div className="mt-1.5 rounded-lg border border-slate-200/90 bg-gradient-to-r from-slate-50/90 via-slate-50/60 to-white px-4 py-2">
           <div className="flex items-center justify-between">
@@ -76,7 +60,7 @@ export function PageTwo({ booking }: PageTwoProps) {
         </div>
 
         <div className="flex-1" />
-        <Footer page={2} />
+        <Footer />
       </div>
     </article>
   );

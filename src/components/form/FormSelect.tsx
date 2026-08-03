@@ -1,10 +1,11 @@
 import { LucideIcon } from "lucide-react";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 interface FormSelectProps {
   label: string;
   icon?: LucideIcon;
-  options: string[];
-  register?: any;
+  options: readonly string[];
+  register?: UseFormRegisterReturn;
   error?: string | undefined;
 }
 

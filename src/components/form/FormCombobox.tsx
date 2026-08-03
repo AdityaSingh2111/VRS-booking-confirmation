@@ -3,12 +3,12 @@ import { LucideIcon, ChevronDown, Search, X } from "lucide-react";
 
 interface FormComboboxProps {
   label: string;
-  icon?: LucideIcon;
-  options: string[];
+  icon?: LucideIcon | undefined;
+  options: readonly string[];
   value: string;
   onChange: (value: string) => void;
-  error?: string;
-  placeholder?: string;
+  error?: string | undefined;
+  placeholder?: string | undefined;
 }
 
 export function FormCombobox({

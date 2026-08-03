@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { formDefaults } from "@/config/services";
 
 const bookingSchema = z
   .object({
@@ -52,7 +53,7 @@ const bookingSchema = z
 export type BookingFormValues = z.infer<typeof bookingSchema>;
 
 export const defaultBookingValues: BookingFormValues = {
-  title: "Mr.",
+  title: formDefaults.title,
   customerName: "",
   phone: "",
   email: "",
@@ -61,7 +62,7 @@ export const defaultBookingValues: BookingFormValues = {
 
   shiftingDate: "",
 
-  serviceType: "Household Shifting",
+  serviceType: formDefaults.serviceType,
 
   pickupAddress: "",
 
@@ -70,9 +71,9 @@ export const defaultBookingValues: BookingFormValues = {
   totalAmount: 0,
   advancePaid: 0,
 
-  paymentMethod: "UPI",
+  paymentMethod: formDefaults.paymentMethod,
 
-  bookingStatus: "Confirmed",
+  bookingStatus: formDefaults.bookingStatus,
 
   executiveName: "",
 };

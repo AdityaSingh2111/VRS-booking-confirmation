@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   CalendarDays,
   CircleUserRound,
-  Headphones,
   MapPin,
   Flag,
   Wallet,
@@ -21,33 +20,19 @@ import {
   Clock,
   Truck,
   User,
-  AtSign,
   PackageCheck,
-  BadgeDollarSign,
   Check,
-  ShieldCheck,
-  Award,
-  Map,
   MailIcon,
   UserCheck,
   IdCard,
 } from "lucide-react";
-import { Card, DocHeader, Field, Footer, Watermark } from "./primitives";
+import { Card, DocHeader, Footer, Watermark } from "./primitives";
 import { company, contact, nextSteps, heroChips, trustBadges } from "@/config/company";
 import { findExecutive } from "@/config/executives";
+import { iconMap } from "@/lib/icon-map";
 import QRCode from "react-qr-code";
-/** Map icon name strings → Lucide components */
-const iconMap: Record<
-  string,
-  React.FC<React.SVGProps<SVGSVGElement> & { strokeWidth?: number }>
-> = {
-  BadgeDollarSign,
-  Award,
-  Map,
-  PackageCheck,
-  Headphones,
-  ShieldCheck,
-};
+
+import { BookingData } from "@/types/booking";
 
 function BookingDetailItem({
   label,
@@ -133,8 +118,6 @@ function CustomerDetailItem({
     </div>
   );
 }
-
-import { BookingData } from "@/types/booking";
 
 interface PageOneProps {
   booking: BookingData;
@@ -527,7 +510,7 @@ export function PageOne({ booking }: PageOneProps) {
         </div>
 
         <div className="flex-1" />
-        <Footer page={1} />
+        <Footer />
       </div>
     </article>
   );

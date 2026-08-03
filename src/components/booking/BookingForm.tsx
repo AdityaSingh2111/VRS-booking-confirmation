@@ -38,14 +38,6 @@ export function BookingForm() {
   const setBooking = useBookingStore((state) => state.setBooking);
   const setFormData = useBookingStore((state) => state.setFormData);
 
-  //   const onSubmit = (data: any) => {
-  //     setBooking(data);
-
-  //     navigate({
-  //       to: "/preview",
-  //     });
-  //   };
-
   const onSubmit = async (data: BookingFormValues) => {
 
     const booking: BookingData = {

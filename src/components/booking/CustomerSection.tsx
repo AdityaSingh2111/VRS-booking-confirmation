@@ -4,7 +4,8 @@ import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { FormInput } from "@/components/form/FormInput";
 import { FormSection } from "@/components/form/FormSection";
 import { BookingFormValues } from "@/hooks/useBookingForm";
-import { FormSelect } from "../form/FormSelect";
+import { FormSelect } from "@/components/form/FormSelect";
+import { customerTitles } from "@/config/services";
 
 interface CustomerSectionProps {
   register: UseFormRegister<BookingFormValues>;
@@ -24,7 +25,7 @@ export function CustomerSection({ register, errors }: CustomerSectionProps) {
         <FormSelect
           label="Title"
           register={register("title")}
-          options={["Mr.", "Mrs.", "Ms.", "Dr.", "M/s."]}
+          options={customerTitles}
         />
         <FormInput
           label="Customer Name"

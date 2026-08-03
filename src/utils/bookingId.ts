@@ -1,3 +1,5 @@
+import { bookingConfig } from "@/config/company";
+
 let bookingCounter = 1;
 
 function pad(value: number, length: number) {
@@ -13,9 +15,9 @@ export function generateBookingId() {
 
   const serial = pad(bookingCounter++, 3);
 
-  return `VRS${year}${month}${day}${serial}`;
+  return `${bookingConfig.idPrefix}${year}${month}${day}${serial}`;
 }
 
 export function generateReferenceNumber() {
-  return generateBookingId().replace("VRS", "REF");
+  return generateBookingId().replace(bookingConfig.idPrefix, bookingConfig.referencePrefix);
 }

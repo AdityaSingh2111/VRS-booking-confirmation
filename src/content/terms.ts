@@ -5,6 +5,8 @@
  * requires touching a component file.
  */
 
+import { company } from "@/config/company";
+
 // ─── Types ───────────────────────────────────────────────────────
 export interface TermsSection {
   index: string;
@@ -86,7 +88,7 @@ export const jurisdiction: TermsSection = {
   index: "05",
   title: "Jurisdiction",
   icon: "Scale",
-  note: "All disputes, claims or legal proceedings arising out of this booking or the services provided by VRS Cargo Packers and Movers shall be subject to the exclusive jurisdiction of the competent courts at Chennai, Tamil Nadu, India.",
+  note: `All disputes, claims or legal proceedings arising out of this booking or the services provided by ${company.nameFull} shall be subject to the exclusive jurisdiction of the competent courts at ${company.jurisdiction}.`,
 };
 
 /** All sections in display order */

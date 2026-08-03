@@ -3,6 +3,7 @@ import { ArrowLeft, Printer } from "lucide-react";
 
 import { BookingDocument } from "@/components/doc/BookingDocument";
 import { useBookingStore } from "@/store/bookingStore";
+import { brand } from "@/config/company";
 
 export const Route = createFileRoute("/preview")({
   component: PreviewPage,
@@ -77,7 +78,8 @@ function PreviewPage() {
                 document.title = previousTitle;
               }, 1000);
             }}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#0539bc] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#0539bc]/90 md:px-5 md:py-2.5"
+            className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white transition md:px-5 md:py-2.5"
+            style={{ backgroundColor: brand.blue }}
           >
             <Printer className="h-4 w-4" />
 
@@ -90,7 +92,6 @@ function PreviewPage() {
 
       {/* Document */}
       <div className="document-container mx-auto flex max-w-6xl flex-col items-center gap-8 py-10">
-        {" "}
         <BookingDocument booking={booking} />
       </div>
     </main>

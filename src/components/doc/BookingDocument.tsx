@@ -13,7 +13,7 @@ export function BookingDocument({
   return (
     <>
       <PageOne booking={booking} />
-      <PageTwo booking={booking} />
+      <PageTwo />
     </>
   );
 }

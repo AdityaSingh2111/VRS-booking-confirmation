@@ -1,10 +1,6 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Project Rules
+
+- This project is a white-label booking confirmation generator template.
+- All company-specific data lives in `src/config/` — never hardcode company names, colors, or contact details in components.
+- Do not modify the print/PDF CSS layout (`styles.css` print rules, `.sheet` class) without explicit approval.
+- Keep the branch in a working state — verify with `npm run build` before pushing.

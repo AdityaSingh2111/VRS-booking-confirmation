@@ -1,11 +1,12 @@
 import { LucideIcon } from "lucide-react";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 interface FormTextareaProps {
   label: string;
   placeholder?: string;
   rows?: number;
   icon?: LucideIcon;
-  register?: any;
+  register?: UseFormRegisterReturn;
   error?: string | undefined;
 }
 

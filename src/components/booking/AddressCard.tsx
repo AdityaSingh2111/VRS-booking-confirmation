@@ -1,8 +1,7 @@
 import { MapPin } from "lucide-react";
-import { FieldErrors, UseFormRegister, Path } from "react-hook-form";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { BookingFormValues } from "@/hooks/useBookingForm";
-import { FormInput } from "@/components/form/FormInput";
 import { FormTextarea } from "@/components/form/FormTextarea";
 
 interface AddressCardProps {
@@ -20,6 +19,8 @@ export function AddressCard({ title, accent, prefix, register, errors }: Address
 
   const color = accent === "blue" ? "text-sky-600" : "text-orange-600 font-extrabold";
 
+  const fieldName = `${prefix}Address` as const;
+
   return (
     <div className="rounded-2xl border border-slate-300 bg-white p-5 shadow-sm">
       <div className="mb-5 flex items-center gap-3">
@@ -34,16 +35,12 @@ export function AddressCard({ title, accent, prefix, register, errors }: Address
         </div>
       </div>
 
-      <div className="space-y-5">
-        <FormTextarea
-          label="Complete Address"
-          placeholder="Enter complete address..."
-          register={register(`${prefix}Address` as Path<BookingFormValues>)}
-          error={errors[`${prefix}Address` as keyof BookingFormValues]?.message as string}
-        />
-
-        <div className="grid grid-cols-2 gap-4"></div>
-      </div>
+      <FormTextarea
+        label="Complete Address"
+        placeholder="Enter complete address..."
+        register={register(fieldName)}
+        error={errors[fieldName]?.message}
+      />
     </div>
   );
 }

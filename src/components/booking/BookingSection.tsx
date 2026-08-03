@@ -13,6 +13,7 @@ import { FormSelect } from "@/components/form/FormSelect";
 import { FormSection } from "@/components/form/FormSection";
 import { FormCombobox } from "@/components/form/FormCombobox";
 import { bookingExecutives } from "@/config/executives";
+import { serviceTypes } from "@/config/services";
 
 interface BookingSectionProps {
   register: UseFormRegister<BookingFormValues>;
@@ -65,14 +66,7 @@ export function BookingSection({
           icon={Truck}
           register={register("serviceType")}
           error={errors.serviceType?.message}
-          options={[
-            "Household Shifting",
-            "Office Relocation",
-            "Car Transportation",
-            "Bike Transportation",
-            "Warehousing & Storage",
-            "Loading & Unloading",
-          ]}
+          options={serviceTypes}
         />
 
         <Controller
@@ -85,8 +79,10 @@ export function BookingSection({
               options={executiveOptions}
               value={field.value || ""}
               onChange={field.onChange}
-              error={errors.executiveName?.message}
               placeholder="Search or select executive..."
+              {...(errors.executiveName?.message
+                ? { error: errors.executiveName.message }
+                : {})}
             />
           )}
         />

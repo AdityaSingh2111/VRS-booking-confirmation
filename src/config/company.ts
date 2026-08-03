@@ -19,6 +19,8 @@ export const company = {
   tagline: "Every Move, Managed Right",
   gst: "33AAKCV0507E1ZQ",
   iso: "ISO 9001:2015",
+  /** Court jurisdiction for terms & conditions. */
+  jurisdiction: "Chennai, Tamil Nadu, India",
 } as const;
 
 // ─── Contact Information ─────────────────────────────────────────
@@ -26,6 +28,10 @@ export const contact = {
   phone: "+91 93440 07343",
   phone2: "+91 93449 07343",
   tollFree: "04446279150",
+  /** Formatted toll-free number shown in the document header. */
+  tollFreeDisplay: "1800 270 9949",
+  /** Support hours shown in the document header. */
+  supportHours: "9:00 AM – 6:00 PM",
   email: "info@vrscargopackers.com",
   website: "vrscargopackers.com",
   websiteUrl: "https://www.vrscargopackers.com",
@@ -68,3 +74,10 @@ export const nextSteps: string[] = [
 
 // ─── Hero Chips ──────────────────────────────────────────────────
 export const heroChips: string[] = ["Safe Packing", "Timely Relocation", "Professional Support"];
+
+// ─── Booking ID Configuration ────────────────────────────────────
+/** Prefixes used when generating booking and reference IDs. */
+export const bookingConfig = {
+  idPrefix: "VRS",
+  referencePrefix: "REF",
+} as const;

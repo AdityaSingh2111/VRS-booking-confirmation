@@ -27,21 +27,14 @@ export function Watermark() {
    LOGO
    ═══════════════════════════════════════════════════════════════════ */
 
-export function Logo({ compact = false }: { compact?: boolean }) {
+export function Logo() {
   return (
     <div className="flex flex-col items-center">
       <img
         src={logo}
-        alt="VRS Cargo Packers & Movers"
-        className={compact ? "h-28 w-auto -mt-12" : "h-28 w-auto -mt-12"}
+        alt={company.nameFull}
+        className="h-28 w-auto -mt-12"
       />
-
-      {/* <p
-        className="mt-1 text-[8px] font-semibold uppercase tracking-[0.28em]"
-        style={{ color: "var(--brand-blue)" }}
-      >
-        {company.tagline}
-      </p> */}
     </div>
   );
 }
@@ -50,11 +43,11 @@ export function Logo({ compact = false }: { compact?: boolean }) {
    DOCUMENT HEADER
    ═══════════════════════════════════════════════════════════════════ */
 
-export function DocHeader({ compact = false }: { compact?: boolean }) {
+export function DocHeader() {
   return (
     <div className="-mt-1 flex flex-col">
       <header className="flex items-center justify-between pb-2">
-        <Logo compact={compact} />
+        <Logo />
 
         <div className="flex flex-col items-end text-right">
           <div className="flex items-center gap-1.5">
@@ -63,14 +56,14 @@ export function DocHeader({ compact = false }: { compact?: boolean }) {
               Toll Free:
             </span>
             <span className="text-[17px] font-bold leading-none text-slate-900">
-              1800 270 9949
+              {contact.tollFreeDisplay}
             </span>
           </div>
 
           <div className="mt-2 flex items-center gap-1.5">
             <Clock3 className="h-7.5 w-4.5" style={{ color: "var(--brand-orange)" }} />
             <span className="text-[12.5px] font-semibold tracking-[0.074em] text-slate-600">
-              Support Time:<span className="font-extrabold text-slate-900"> 9:00 AM – 6:00 PM</span>
+              Support Time:<span className="font-extrabold text-slate-900"> {contact.supportHours}</span>
             </span>
           </div>
         </div>
@@ -236,8 +229,7 @@ export function TermsCard({
    FOOTER
    ═══════════════════════════════════════════════════════════════════ */
 
-export function Footer({ page }: { page: number }) {
-  void page;
+export function Footer() {
   return (
     <footer className="mt-auto overflow-hidden rounded-lg border border-slate-200/90 bg-slate-50/90">
       {/* Colored divider */}

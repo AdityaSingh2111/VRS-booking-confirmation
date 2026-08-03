@@ -5,6 +5,7 @@ import { BookingFormValues } from "@/hooks/useBookingForm";
 import { FormInput } from "@/components/form/FormInput";
 import { FormSelect } from "@/components/form/FormSelect";
 import { FormSection } from "@/components/form/FormSection";
+import { paymentMethods, bookingStatuses } from "@/config/services";
 
 interface PaymentSectionProps {
   register: UseFormRegister<BookingFormValues>;
@@ -67,7 +68,7 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
           icon={CreditCard}
           register={register("paymentMethod")}
           error={errors.paymentMethod?.message}
-          options={["UPI", "Cash", "Bank Transfer", "Cheque", "Card"]}
+          options={paymentMethods}
         />
 
         <div className="md:col-span-2">
@@ -76,7 +77,7 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
             icon={CheckCircle2}
             register={register("bookingStatus")}
             error={errors.bookingStatus?.message}
-            options={["Confirmed", "Pending Payment", "On Hold"]}
+            options={bookingStatuses}
           />
         </div>
       </div>

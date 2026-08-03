@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { doc } from "@/config/company";
+import { seo, ogImageUrl } from "@/config/seo";
 import { BookingForm } from "@/components/booking/BookingForm";
 
 export const Route = createFileRoute("/")({
@@ -24,12 +25,12 @@ export const Route = createFileRoute("/")({
 
       {
         property: "og:image",
-        content: "https://vrsbooking.vercel.app/og-image.png",
+        content: ogImageUrl,
       },
 
       {
         property: "og:url",
-        content: "https://vrsbooking.vercel.app",
+        content: seo.deployUrl,
       },
 
       {
@@ -39,12 +40,12 @@ export const Route = createFileRoute("/")({
 
       {
         property: "og:site_name",
-        content: "VRS Cargo",
+        content: seo.siteName,
       },
 
       {
         property: "twitter:card",
-        content: "summary_large_image",
+        content: seo.twitterCard,
       },
 
       {
@@ -59,7 +60,7 @@ export const Route = createFileRoute("/")({
 
       {
         property: "twitter:image",
-        content: "https://vrsbooking.vercel.app/og-image.png",
+        content: ogImageUrl,
       },
     ],
   }),
