@@ -115,7 +115,7 @@ export function BookingForm() {
       <FormActions
         onReset={() => {
           const confirmed = window.confirm(
-            "Are you sure you want to reset the booking form?\n\nAll entered data will be lost.",
+            "Are you sure you want to reset the booking form?\n\nAll entered information will be cleared.",
           );
 
           if (!confirmed) return;

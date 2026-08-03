@@ -6,9 +6,12 @@ import { formDefaults } from "@/config/services";
 const bookingSchema = z
   .object({
     title: z.string(),
-    customerName: z.string().min(2, "Customer name is required"),
+    customerName: z.string().min(2, "Please enter the customer's full name"),
 
-    phone: z.string().min(10).max(10),
+    phone: z
+      .string()
+      .min(10, "Please enter a valid 10-digit phone number")
+      .max(10, "Please enter a valid 10-digit phone number"),
 
     email: z
       .string()
@@ -17,15 +20,15 @@ const bookingSchema = z
       .optional()
       .or(z.literal("")),
 
-    bookingDate: z.string(),
+    bookingDate: z.string().min(1, "Please select a booking date"),
 
-    shiftingDate: z.string(),
+    shiftingDate: z.string().min(1, "Please select a shifting date"),
 
     serviceType: z.string(),
 
-    pickupAddress: z.string().min(5),
+    pickupAddress: z.string().min(5, "Please enter the complete pickup address"),
 
-    deliveryAddress: z.string().min(5),
+    deliveryAddress: z.string().min(5, "Please enter the complete delivery address"),
 
     totalAmount: z.coerce.number(),
 
@@ -39,15 +42,15 @@ const bookingSchema = z
   })
   .refine((data) => data.totalAmount > 0, {
     path: ["totalAmount"],
-    message: "Total amount must be greater than zero.",
+    message: "Please enter a total amount greater than zero",
   })
   .refine((data) => data.advancePaid >= 0, {
     path: ["advancePaid"],
-    message: "Advance amount cannot be negative.",
+    message: "Advance payment cannot be less than zero",
   })
   .refine((data) => data.advancePaid <= data.totalAmount, {
     path: ["advancePaid"],
-    message: "Advance amount cannot exceed total amount.",
+    message: "Advance payment cannot be more than the total amount",
   });
 
 export type BookingFormValues = z.infer<typeof bookingSchema>;
