@@ -103,7 +103,7 @@ export function BookingForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div className="absolute top-0 inset-x-0 h-1 bg-brand-blue" />
+        <div className="absolute top-0 inset-x-0 h-1 bg-primary" />
         <img
           src={company.logo}
           alt={company.name}

@@ -29,7 +29,7 @@ export function PageTwo() {
             </div>
             <span
               className="rounded-full border border-sky-200/80 bg-sky-50/90 px-3 py-1 text-[8.5px] font-bold uppercase tracking-widest"
-              style={{ color: "var(--brand-blue)" }}
+              style={{ color: "var(--primary)" }}
             >
               Legal Agreement
             </span>
@@ -37,7 +37,7 @@ export function PageTwo() {
           <div
             className="mt-2 h-[2px] w-full rounded-full"
             style={{
-              background: "linear-gradient(90deg, var(--brand-blue), var(--brand-orange))",
+              background: "linear-gradient(90deg, var(--primary), var(--secondary))",
             }}
           />
         </div>

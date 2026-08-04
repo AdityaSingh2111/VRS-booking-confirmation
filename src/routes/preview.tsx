@@ -3,7 +3,6 @@ import { ArrowLeft, Printer } from "lucide-react";
 
 import { BookingDocument } from "@/components/doc/BookingDocument";
 import { useBookingStore } from "@/store/bookingStore";
-import { brand } from "@/config/company";
 
 export const Route = createFileRoute("/preview")({
   component: PreviewPage,
@@ -24,7 +23,7 @@ function PreviewPage() {
 
           <button
             onClick={() => navigate({ to: "/" })}
-            className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700"
+            className="mt-6 rounded-lg bg-primary px-5 py-2 text-white transition hover:bg-primary/90"
           >
             Go to Booking Form
           </button>
@@ -78,8 +77,7 @@ function PreviewPage() {
                 document.title = previousTitle;
               }, 1000);
             }}
-            className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white transition md:px-5 md:py-2.5"
-            style={{ backgroundColor: brand.blue }}
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 md:px-5 md:py-2.5"
           >
             <Printer className="h-4 w-4" />
 

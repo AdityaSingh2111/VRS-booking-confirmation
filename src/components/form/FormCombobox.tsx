@@ -1,4 +1,4 @@
-﻿import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { LucideIcon, ChevronDown, Search, X } from "lucide-react";
 
 interface FormComboboxProps {
@@ -70,7 +70,7 @@ export function FormCombobox({
           onClick={() => setOpen((o) => !o)}
           className={`w-full rounded-xl border bg-white px-4 py-3 text-left outline-none transition flex items-center justify-between
             ${Icon ? "pl-10" : ""}
-            ${error ? "border-red-500" : open ? "border-sky-500 ring-1 ring-sky-200" : "border-slate-300 hover:border-slate-400"}`}
+            ${error ? "border-danger" : open ? "border-primary ring-1 ring-primary/20" : "border-slate-300 hover:border-slate-400"}`}
         >
           <span className={value ? "text-slate-900 text-sm font-medium" : "text-slate-400 text-sm"}>
             {value || placeholder}
@@ -124,7 +124,7 @@ export function FormCombobox({
                       onClick={() => select(option)}
                       className={`w-full px-4 py-2.5 text-left text-sm transition
                         ${value === option
-                          ? "bg-sky-50 text-sky-700 font-semibold"
+                          ? "bg-primary/10 text-primary font-semibold"
                           : "text-slate-700 hover:bg-slate-50"
                         }`}
                     >
@@ -143,7 +143,7 @@ export function FormCombobox({
         )}
       </div>
 
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && <p className="text-sm text-danger">{error}</p>}
     </div>
   );
 }

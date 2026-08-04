@@ -6,6 +6,7 @@
  * files that need multiple config modules.
  */
 
+export * from "./theme";
 export * from "./company";
 export * from "./executives";
 export * from "./services";

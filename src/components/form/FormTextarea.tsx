@@ -33,13 +33,13 @@ export function FormTextarea({
             ${Icon ? "pl-10" : ""}
             ${
               error
-                ? "border-red-500 focus:border-red-500"
-                : "border-slate-300 focus:border-sky-500"
+                ? "border-danger focus:border-danger"
+                : "border-slate-300 focus:border-primary"
             }`}
         />
       </div>
 
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && <p className="text-sm text-danger">{error}</p>}
     </div>
   );
 }

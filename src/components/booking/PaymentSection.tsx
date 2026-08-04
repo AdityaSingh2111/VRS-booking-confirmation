@@ -24,8 +24,8 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
       title="Payment Information"
       description="Enter booking payment details."
       icon={Wallet}
-      iconBg="bg-green-100"
-      iconColor="text-green-600"
+      iconBg="bg-success/10"
+      iconColor="text-success"
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <FormInput
@@ -58,7 +58,7 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
           value={balance}
         />
         {advanceExceeded && (
-          <p className="text-sm font-semibold text-red-600">
+          <p className="text-sm font-semibold text-danger">
             Advance payment cannot be more than the total amount.
           </p>
         )}

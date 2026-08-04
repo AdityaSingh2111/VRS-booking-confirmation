@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { Card, DocHeader, Footer, Watermark } from "./primitives";
 import { company, contact, nextSteps, heroChips, trustBadges } from "@/config/company";
+import { theme } from "@/config/theme";
 import { findExecutive } from "@/config/executives";
 import { iconMap } from "@/lib/icon-map";
 import QRCode from "react-qr-code";
@@ -54,7 +55,7 @@ function BookingDetailItem({
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
         style={{
           borderColor: highlight ? "rgb(250 136 53 / 0.32)" : "rgb(13 160 253 / 0.18)",
-          color: highlight ? "var(--brand-orange)" : "var(--brand-blue)",
+          color: highlight ? "var(--secondary)" : "var(--primary)",
         }}
       >
         {icon}
@@ -72,7 +73,7 @@ function BookingDetailItem({
           className="shrink-0 rounded-sm border px-1.5 py-0.5 text-[7.5px] font-bold uppercase tracking-[0.14em]"
           style={{
             borderColor: "rgb(250 136 53 / 0.28)",
-            color: "var(--brand-orange)",
+            color: "var(--secondary)",
           }}
         >
           ID
@@ -102,7 +103,7 @@ function CustomerDetailItem({
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
         style={{
           borderColor: prominent ? "rgb(250 136 53 / 0.28)" : "rgb(13 160 253 / 0.18)",
-          color: prominent ? "var(--brand-orange)" : "var(--brand-blue)",
+          color: prominent ? "var(--secondary)" : "var(--primary)",
         }}
       >
         {icon}
@@ -140,40 +141,40 @@ export function PageOne({ booking }: PageOneProps) {
             >
               <path
                 d="M25 79 C57 58 82 91 110 69 C132 52 148 56 170 39"
-                stroke="green"
+                stroke="var(--success)"
                 strokeDasharray="5 5"
                 strokeLinecap="round"
                 strokeWidth="2"
               />
               <path
                 d="M20 65 L39 49 L58 65 V91 H20 Z"
-                stroke="var(--brand-blue)"
+                stroke="var(--primary)"
                 strokeLinejoin="round"
                 strokeWidth="2"
               />
               <path
                 d="M31 91 V72 H47 V91"
-                stroke="var(--brand-blue)"
+                stroke="var(--primary)"
                 strokeLinejoin="round"
                 strokeWidth="2"
               />
               <path
                 d="M76 72 H123 L135 84 V94 H76 Z"
-                stroke="var(--brand-orange)"
+                stroke="var(--secondary)"
                 strokeLinejoin="round"
                 strokeWidth="2"
               />
               <path
                 d="M123 72 V94"
-                stroke="var(--brand-orange)"
+                stroke="var(--secondary)"
                 strokeLinecap="round"
                 strokeWidth="2"
               />
-              <circle cx="91" cy="96" r="7" stroke="var(--brand-orange)" strokeWidth="2" />
-              <circle cx="122" cy="96" r="7" stroke="var(--brand-orange)" strokeWidth="2" />
+              <circle cx="91" cy="96" r="7" stroke="var(--secondary)" strokeWidth="2" />
+              <circle cx="122" cy="96" r="7" stroke="var(--secondary)" strokeWidth="2" />
               <path
                 d="M162 44 C162 32 171 24 181 24 C191 24 200 32 200 44 C200 59 181 78 181 78 C181 78 162 59 162 44 Z"
-                stroke="green"
+                stroke="var(--success)"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 transform="translate(-19 0)"
@@ -182,7 +183,7 @@ export function PageOne({ booking }: PageOneProps) {
                 cx="162"
                 cy="44"
                 r="4"
-                stroke="green"
+                stroke="var(--success)"
                 strokeWidth="2"
                 transform="translate(0 0)"
               />
@@ -195,7 +196,7 @@ export function PageOne({ booking }: PageOneProps) {
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border bg-white shadow-xs"
                     style={{
                       borderColor: "rgb(34 197 94 / 0.35)",
-                      color: "green",
+                      color: "var(--success)",
                     }}
                   >
                     <CheckCircle2 className="h-8 w-7" strokeWidth={2.5} />
@@ -203,7 +204,7 @@ export function PageOne({ booking }: PageOneProps) {
                   <div className="min-w-0">
                     <p
                       className="text-[7.5px] font-semibold uppercase tracking-[0.2em]"
-                      style={{ color: "green" }}
+                      style={{ color: "var(--success)" }}
                     >
                       Reservation Status
                     </p>
@@ -215,7 +216,7 @@ export function PageOne({ booking }: PageOneProps) {
 
                 <p
                   className="mt-1.0 text-[12px] font-semibold leading-tight"
-                  style={{ color: "green" }}
+                  style={{ color: "var(--success)" }}
                 >
                   Your booking has been successfully confirmed.
                 </p>
@@ -225,7 +226,7 @@ export function PageOne({ booking }: PageOneProps) {
                     {booking.customer.title} {booking.customer.name},
                   </p>
                   <p className="mt-0.5 text-[11.8px] leading-[1.45] text-slate-800">
-                    Thank you for choosing <span style={{ color: "var(--brand-orange)" }}>{company.nameFull}</span>. Your move is now in careful hands,
+                    Thank you for choosing <span style={{ color: "var(--secondary)" }}>{company.nameFull}</span>. Your move is now in careful hands,
                     with safe packing, timely coordination, and professional support from pickup to
                     delivery.
                   </p>
@@ -241,7 +242,7 @@ export function PageOne({ booking }: PageOneProps) {
                       <Check
                         className="h-2.5 w-2.5"
                         strokeWidth={2.8}
-                        style={{ color: "var(--brand-green)" }}
+                        style={{ color: "var(--tertiary)" }}
                       />
                       {c}
                     </span>
@@ -370,7 +371,7 @@ export function PageOne({ booking }: PageOneProps) {
                 </p>
                 <p
                   className="mt-2 text-[22px] font-semibold leading-none tracking-tight"
-                  style={{ color: "green" }}
+                  style={{ color: "var(--success)" }}
                 >
                   ₹{booking.payment.advance.toLocaleString("en-IN")}
                 </p>
@@ -381,7 +382,7 @@ export function PageOne({ booking }: PageOneProps) {
                 </p>
                 <p
                   className="mt-2 text-[24px] font-extrabold leading-none tracking-tight"
-                  style={{ color: "var(--brand-orange)" }}
+                  style={{ color: "var(--secondary)" }}
                 >
                   ₹{booking.payment.balance.toLocaleString("en-IN")}
                 </p>
@@ -399,7 +400,7 @@ export function PageOne({ booking }: PageOneProps) {
             <header className="mb-1.5 flex items-center gap-2">
               <h3
                 className="font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 What Happens Next
               </h3>
@@ -410,7 +411,7 @@ export function PageOne({ booking }: PageOneProps) {
                   <Check
                     className="mt-[3px] h-3 w-3 shrink-0"
                     strokeWidth={4}
-                    style={{ color: "var(--brand-blue)" }}
+                    style={{ color: "var(--primary)" }}
                   />
                   <span>{s}</span>
                 </li>
@@ -426,7 +427,7 @@ export function PageOne({ booking }: PageOneProps) {
             <div>
               <h3
                 className="mb-2 font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 Customer Support
               </h3>
@@ -455,7 +456,7 @@ export function PageOne({ booking }: PageOneProps) {
                 <div className="border-l border-hairline pl-4">
                   <h3
                     className="mb-2 font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
-                    style={{ color: "var(--brand-blue)" }}
+                    style={{ color: "var(--primary)" }}
                   >
                     Booking Executive
                   </h3>
@@ -481,13 +482,13 @@ export function PageOne({ booking }: PageOneProps) {
             <div className="flex flex-col items-center">
               <h3
                 className="mb-2 text-center text-[10px] font-semibold uppercase tracking-[0.15em]"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 Verify Booking
               </h3>
 
               <div className="rounded-md border border-hairline bg-white p-1 shadow-sm">
-                <QRCode value={contact.websiteUrl} size={54} bgColor="#e06a0940" fgColor="#000000ff" />
+                <QRCode value={contact.websiteUrl} size={54} bgColor={`${theme.colors.secondary}40`} fgColor="#000000ff" />
               </div>
             </div>
           </div>

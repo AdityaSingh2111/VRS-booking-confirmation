@@ -15,9 +15,9 @@ interface AddressCardProps {
 }
 
 export function AddressCard({ title, accent, prefix, register, errors }: AddressCardProps) {
-  const bg = accent === "blue" ? "bg-sky-100" : "bg-orange-100";
+  const bg = accent === "blue" ? "bg-primary/10" : "bg-secondary/10";
 
-  const color = accent === "blue" ? "text-sky-600" : "text-orange-600 font-extrabold";
+  const color = accent === "blue" ? "text-primary" : "text-secondary font-extrabold";
 
   const fieldName = `${prefix}Address` as const;
 

@@ -47,17 +47,17 @@ export function FormInput({
             ${Icon ? "pl-10" : ""}
             ${
               error
-                ? "border-red-500 focus:border-red-500"
-                : "border-slate-300 focus:border-sky-500"
+                ? "border-danger focus:border-danger"
+                : "border-slate-300 focus:border-primary"
             }
             ${readOnly || disabled ? "bg-slate-100 text-slate-700 cursor-not-allowed" : "bg-white"}
-            focus:ring-2 focus:ring-sky-100
+            focus:ring-2 focus:ring-primary/20
             ${className}
           `}
         />
       </div>
 
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && <p className="text-sm text-danger">{error}</p>}
     </div>
   );
 }

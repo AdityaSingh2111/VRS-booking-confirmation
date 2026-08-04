@@ -19,7 +19,7 @@ export function FormSection({
   children,
 }: FormSectionProps) {
   return (
-    <section className="rounded-2xl border border-slate-300 border-l-4 border-l-brand-blue bg-white p-6 shadow-sm">
+    <section className="rounded-2xl border border-slate-300 border-l-4 border-l-primary bg-white p-6 shadow-sm">
       <div className="mb-6 flex items-center gap-3">
         <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${iconBg}`}>
           <Icon className={`h-5 w-5 ${iconColor}`} />

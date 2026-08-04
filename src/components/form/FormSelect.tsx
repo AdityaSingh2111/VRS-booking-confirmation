@@ -21,7 +21,7 @@ export function FormSelect({ label, icon: Icon, options, register, error }: Form
           {...register}
           className={`w-full rounded-xl border bg-white px-4 py-3 outline-none transition
             ${Icon ? "pl-10" : ""}
-            ${error ? "border-red-500" : "border-slate-300 focus:border-sky-500"}`}
+            ${error ? "border-danger" : "border-slate-300 focus:border-primary"}`}
         >
           {options.map((option) => (
             <option key={option} value={option}>
@@ -31,7 +31,7 @@ export function FormSelect({ label, icon: Icon, options, register, error }: Form
         </select>
       </div>
 
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && <p className="text-sm text-danger">{error}</p>}
     </div>
   );
 }

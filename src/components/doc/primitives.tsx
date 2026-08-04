@@ -51,7 +51,7 @@ export function DocHeader() {
 
         <div className="flex flex-col items-end text-right">
           <div className="flex items-center gap-1.5">
-            <PhoneCall className="h-7.5 w-4.5" style={{ color: "var(--brand-blue)" }} />
+            <PhoneCall className="h-7.5 w-4.5" style={{ color: "var(--primary)" }} />
             <span className="text-[11.5px] font-semibold uppercase tracking-[0.24em] text-slate-700">
               Toll Free:
             </span>
@@ -61,7 +61,7 @@ export function DocHeader() {
           </div>
 
           <div className="mt-2 flex items-center gap-1.5">
-            <Clock3 className="h-7.5 w-4.5" style={{ color: "var(--brand-orange)" }} />
+            <Clock3 className="h-7.5 w-4.5" style={{ color: "var(--secondary)" }} />
             <span className="text-[12.5px] font-semibold tracking-[0.074em] text-slate-600">
               Support Time:<span className="font-extrabold text-slate-900"> {contact.supportHours}</span>
             </span>
@@ -72,7 +72,7 @@ export function DocHeader() {
       <div
         className="h-[2px] w-full rounded-full"
         style={{
-          background: "linear-gradient(90deg, var(--brand-blue), var(--brand-orange))",
+          background: "linear-gradient(90deg, var(--primary), var(--secondary))",
         }}
       />
     </div>
@@ -107,15 +107,15 @@ export function Card({
       {accent && (
         <div
           className="absolute left-0 top-0 h-full w-[2px] rounded-full"
-          style={{ backgroundColor: "var(--brand-orange)" }}
+          style={{ backgroundColor: "var(--secondary)" }}
         />
       )}
       {title && (
         <header className="mb-3 flex items-center gap-2">
-          {icon && <span style={{ color: "var(--brand-blue)" }}>{icon}</span>}
+          {icon && <span style={{ color: "var(--primary)" }}>{icon}</span>}
           <h3
             className="font-serif text-[11px] font-bold uppercase underline decoration-[1.2px] tracking-[0.15em]"
-            style={{ color: "var(--brand-blue)" }}
+            style={{ color: "var(--primary)" }}
           >
             {title}
           </h3>
@@ -185,10 +185,10 @@ export function TermsCard({
       }}
     >
       <header className="mb-1 flex items-center gap-2">
-        {icon && <span style={{ color: "var(--brand-blue)" }}>{icon}</span>}
+        {icon && <span style={{ color: "var(--primary)" }}>{icon}</span>}
         <h3
           className="font-serif text-[12px] font-extrabold uppercase underline decoration-[1.5px] underline-offset-2 tracking-[0.16em]"
-          style={{ color: "var(--brand-blue)" }}
+          style={{ color: "var(--primary)" }}
         >
           <span className="mr-3.5">{index}</span>
           {title}
@@ -236,7 +236,7 @@ export function Footer() {
       <div
         className="h-[2px] w-full"
         style={{
-          background: `linear-gradient(90deg, var(--brand-blue), var(--brand-orange))`,
+          background: `linear-gradient(90deg, var(--primary), var(--secondary))`,
         }}
       />
       <div className="px-3 py-2">
@@ -246,7 +246,7 @@ export function Footer() {
               <Globe className="h-3 w-3 text-slate-700" />
               <span
                 className="text-[10px] font-extrabold whitespace-nowrap"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 {contact.website}
               </span>
@@ -255,7 +255,7 @@ export function Footer() {
               <Phone className="h-3 w-3 text-slate-700" />
               <span
                 className="text-[10px] font-extrabold whitespace-nowrap"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 {contact.phone}
               </span>
@@ -264,7 +264,7 @@ export function Footer() {
               <PhoneCall className="h-3 w-3 text-slate-700" />
               <span
                 className="text-[10px] font-extrabold whitespace-nowrap"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 {contact.phone2}
               </span>
@@ -273,7 +273,7 @@ export function Footer() {
               <Mail className="h-3 w-3 text-slate-700" />
               <span
                 className="text-[10px] font-extrabold whitespace-nowrap"
-                style={{ color: "var(--brand-blue)" }}
+                style={{ color: "var(--primary)" }}
               >
                 {contact.email}
               </span>

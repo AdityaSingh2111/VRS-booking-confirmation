@@ -33,8 +33,8 @@ export function BookingSection({
       title="Booking Information"
       description="Enter booking and service details."
       icon={ClipboardList}
-      iconBg="bg-orange-100"
-      iconColor="text-orange-600"
+      iconBg="bg-secondary/10"
+      iconColor="text-secondary"
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
 

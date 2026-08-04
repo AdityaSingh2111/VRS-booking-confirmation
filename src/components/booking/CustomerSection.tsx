@@ -18,8 +18,8 @@ export function CustomerSection({ register, errors }: CustomerSectionProps) {
       title="Customer Information"
       description="Enter the customer's contact details."
       icon={User}
-      iconBg="bg-sky-100"
-      iconColor="text-sky-600"
+      iconBg="bg-primary/10"
+      iconColor="text-primary"
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-[120px_1fr]">
         <FormSelect
