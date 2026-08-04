@@ -187,7 +187,7 @@ git push -u origin main
 
 ### Step 7.2: Deploy to Production
 
-For step-by-step production hosting setup (Vercel, Node server, Cloudflare Pages, Netlify), see **[DEPLOYMENT.md](file:///c:/VRS/booking-confirmation/DEPLOYMENT.md)**.
+For step-by-step production hosting setup (Vercel, Node server, Cloudflare Pages, Netlify), see **[DEPLOYMENT.md]**.
 
 ---
 
