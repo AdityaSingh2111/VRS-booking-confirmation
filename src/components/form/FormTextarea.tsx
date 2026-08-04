@@ -32,9 +32,7 @@ export function FormTextarea({
           className={`w-full resize-none rounded-xl border px-4 py-3 transition outline-none
             ${Icon ? "pl-10" : ""}
             ${
-              error
-                ? "border-danger focus:border-danger"
-                : "border-slate-300 focus:border-primary"
+              error ? "border-danger focus:border-danger" : "border-slate-300 focus:border-primary"
             }`}
         />
       </div>

@@ -19,7 +19,9 @@ function PreviewPage() {
         <div className="rounded-xl border bg-white p-8 shadow-lg text-center">
           <h2 className="text-xl font-semibold text-slate-900">No Booking Details Found</h2>
 
-          <p className="mt-2 text-slate-700">Please fill out and submit the booking form first to view your confirmation document.</p>
+          <p className="mt-2 text-slate-700">
+            Please fill out and submit the booking form first to view your confirmation document.
+          </p>
 
           <button
             onClick={() => navigate({ to: "/" })}

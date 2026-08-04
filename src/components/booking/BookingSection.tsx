@@ -1,10 +1,4 @@
-import {
-  CalendarDays,
-  Truck,
-  Hash,
-  ClipboardList,
-  UserCheck,
-} from "lucide-react";
+import { CalendarDays, Truck, Hash, ClipboardList, UserCheck } from "lucide-react";
 import { Control, Controller, FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { BookingFormValues } from "@/hooks/useBookingForm";
@@ -21,11 +15,7 @@ interface BookingSectionProps {
   control: Control<BookingFormValues>;
 }
 
-export function BookingSection({
-  register,
-  errors,
-  control,
-}: BookingSectionProps) {
+export function BookingSection({ register, errors, control }: BookingSectionProps) {
   const executiveOptions = bookingExecutives.map((e) => e.name);
 
   return (
@@ -37,13 +27,7 @@ export function BookingSection({
       iconColor="text-secondary"
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-
-        <FormInput
-          label="Booking ID"
-          placeholder="Auto Generated"
-          icon={Hash}
-          readOnly
-        />
+        <FormInput label="Booking ID" placeholder="Auto Generated" icon={Hash} readOnly />
 
         <FormInput
           label="Booking Date"
@@ -80,13 +64,10 @@ export function BookingSection({
               value={field.value || ""}
               onChange={field.onChange}
               placeholder="Search or select executive..."
-              {...(errors.executiveName?.message
-                ? { error: errors.executiveName.message }
-                : {})}
+              {...(errors.executiveName?.message ? { error: errors.executiveName.message } : {})}
             />
           )}
         />
-
       </div>
     </FormSection>
   );

@@ -30,11 +30,7 @@ export function Watermark() {
 export function Logo() {
   return (
     <div className="flex flex-col items-center">
-      <img
-        src={logo}
-        alt={company.nameFull}
-        className="h-28 w-auto -mt-12"
-      />
+      <img src={logo} alt={company.nameFull} className="h-28 w-auto -mt-12" />
     </div>
   );
 }
@@ -63,7 +59,8 @@ export function DocHeader() {
           <div className="mt-2 flex items-center gap-1.5">
             <Clock3 className="h-7.5 w-4.5" style={{ color: "var(--secondary)" }} />
             <span className="text-[12.5px] font-semibold tracking-[0.074em] text-slate-600">
-              Support Time:<span className="font-extrabold text-slate-900"> {contact.supportHours}</span>
+              Support Time:
+              <span className="font-extrabold text-slate-900"> {contact.supportHours}</span>
             </span>
           </div>
         </div>
@@ -147,8 +144,9 @@ export function Field({
       <div className="min-w-0">
         <p className="text-[7.5px] uppercase tracking-widest text-slate-700">{label}</p>
         <p
-          className={`mt-0.5 truncate text-[12px] ${strong ? "font-semibold text-foreground" : "font-semibold text-foreground/90"
-            }`}
+          className={`mt-0.5 truncate text-[12px] ${
+            strong ? "font-semibold text-foreground" : "font-semibold text-foreground/90"
+          }`}
         >
           {value}
         </p>

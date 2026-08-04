@@ -45,11 +45,7 @@ export function FormInput({
           className={`
             w-full min-w-0 rounded-xl border px-4 py-3 transition-all duration-200 outline-none
             ${Icon ? "pl-10" : ""}
-            ${
-              error
-                ? "border-danger focus:border-danger"
-                : "border-slate-300 focus:border-primary"
-            }
+            ${error ? "border-danger focus:border-danger" : "border-slate-300 focus:border-primary"}
             ${readOnly || disabled ? "bg-slate-100 text-slate-700 cursor-not-allowed" : "bg-white"}
             focus:ring-2 focus:ring-primary/20
             ${className}

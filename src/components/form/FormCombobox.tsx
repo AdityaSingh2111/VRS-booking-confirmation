@@ -63,7 +63,9 @@ export function FormCombobox({
 
       {/* Trigger */}
       <div className="relative">
-        {Icon && <Icon className="absolute left-3 top-3.5 h-4 w-4 text-slate-600 pointer-events-none z-10" />}
+        {Icon && (
+          <Icon className="absolute left-3 top-3.5 h-4 w-4 text-slate-600 pointer-events-none z-10" />
+        )}
 
         <button
           type="button"
@@ -106,7 +108,11 @@ export function FormCombobox({
                 className="w-full text-sm outline-none placeholder:text-slate-400 bg-transparent"
               />
               {query && (
-                <button type="button" onClick={() => setQuery("")} className="text-slate-400 hover:text-slate-600">
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="text-slate-400 hover:text-slate-600"
+                >
                   <X className="h-3 w-3" />
                 </button>
               )}
@@ -123,9 +129,10 @@ export function FormCombobox({
                       type="button"
                       onClick={() => select(option)}
                       className={`w-full px-4 py-2.5 text-left text-sm transition
-                        ${value === option
-                          ? "bg-primary/10 text-primary font-semibold"
-                          : "text-slate-700 hover:bg-slate-50"
+                        ${
+                          value === option
+                            ? "bg-primary/10 text-primary font-semibold"
+                            : "text-slate-700 hover:bg-slate-50"
                         }`}
                     >
                       {option}

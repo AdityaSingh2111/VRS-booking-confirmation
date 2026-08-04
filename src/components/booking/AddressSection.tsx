@@ -11,10 +11,7 @@ interface AddressSectionProps {
   errors: FieldErrors<BookingFormValues>;
 }
 
-export function AddressSection({
-  register,
-  errors,
-}: AddressSectionProps) {
+export function AddressSection({ register, errors }: AddressSectionProps) {
   return (
     <FormSection
       title="Pickup & Delivery"
@@ -24,7 +21,6 @@ export function AddressSection({
       iconColor="text-violet-600"
     >
       <div className="grid gap-6 lg:grid-cols-2">
-
         <AddressCard
           title="Pickup Address"
           accent="blue"
@@ -40,7 +36,6 @@ export function AddressSection({
           register={register}
           errors={errors}
         />
-
       </div>
     </FormSection>
   );

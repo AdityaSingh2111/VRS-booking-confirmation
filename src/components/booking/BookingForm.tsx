@@ -40,7 +40,6 @@ export function BookingForm() {
   const setFormData = useBookingStore((state) => state.setFormData);
 
   const onSubmit = async (data: BookingFormValues) => {
-
     const booking: BookingData = {
       bookingId: generateBookingId(),
 
@@ -96,9 +95,7 @@ export function BookingForm() {
     });
   };
   if (loading) {
-    return (
-      <LoadingScreen />
-    );
+    return <LoadingScreen />;
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

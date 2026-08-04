@@ -22,11 +22,7 @@ export function CustomerSection({ register, errors }: CustomerSectionProps) {
       iconColor="text-primary"
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-[120px_1fr]">
-        <FormSelect
-          label="Title"
-          register={register("title")}
-          options={customerTitles}
-        />
+        <FormSelect label="Title" register={register("title")} options={customerTitles} />
         <FormInput
           label="Customer Name"
           placeholder="Enter customer name"

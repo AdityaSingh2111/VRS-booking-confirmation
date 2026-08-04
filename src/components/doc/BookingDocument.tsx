@@ -7,9 +7,7 @@ interface BookingDocumentProps {
   booking: BookingData;
 }
 
-export function BookingDocument({
-  booking,
-}: BookingDocumentProps) {
+export function BookingDocument({ booking }: BookingDocumentProps) {
   return (
     <>
       <PageOne booking={booking} />

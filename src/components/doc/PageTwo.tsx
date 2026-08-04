@@ -28,7 +28,7 @@ export function PageTwo() {
               </p>
             </div>
             <span
-              className="rounded-full border border-sky-200/80 bg-sky-50/90 px-3 py-1 text-[8.5px] font-bold uppercase tracking-widest"
+              className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[8.5px] font-bold uppercase tracking-widest"
               style={{ color: "var(--primary)" }}
             >
               Legal Agreement

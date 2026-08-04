@@ -134,10 +134,7 @@
   }
 
   body {
-    background:
-      linear-gradient(180deg,
-        #eef4fb,
-        #f8fafc);
+    background: linear-gradient(180deg, #eef4fb, #f8fafc);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-variant-numeric: tabular-nums;
@@ -179,7 +176,7 @@
   padding-block: 0.75rem;
 }
 
-.page-one .page-one-card>header {
+.page-one .page-one-card > header {
   margin-bottom: 0.5rem;
 }
 
@@ -189,14 +186,14 @@
 
 .page-one .booking-details-card {
   background:
-    linear-gradient(90deg, rgb(13 160 253 / 0.035), transparent 44%),
+    linear-gradient(90deg, color-mix(in srgb, var(--primary) 4%, transparent), transparent 44%),
     var(--color-background);
-  border-color: rgb(13 160 253 / 0.22);
+  border-color: color-mix(in srgb, var(--primary) 22%, transparent);
   padding-inline: 0.5rem;
 }
 
-.page-one .booking-details-card>header {
-  border-bottom: 1px solid rgb(13 160 253 / 0.12);
+.page-one .booking-details-card > header {
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 12%, transparent);
   margin-bottom: 0.35rem;
   padding-bottom: 0.35rem;
 }
@@ -209,7 +206,7 @@
 }
 
 .page-one .booking-detail-item:nth-child(n + 3) {
-  border-top-color: rgb(13 160 253 / 0.1);
+  border-top-color: color-mix(in srgb, var(--primary) 10%, transparent);
 }
 
 .page-one .booking-detail-highlight {
@@ -218,38 +215,35 @@
 
 @media screen {
   .sheet {
-
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, .08);
-
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
   .page-one .booking-detail-item:hover {
-    background-color: rgb(13 160 253 / 0.035);
+    background-color: color-mix(in srgb, var(--primary) 4%, transparent);
   }
 
   .page-one .booking-detail-highlight:hover {
-    background-color: rgb(250 136 53 / 0.045);
+    background-color: color-mix(in srgb, var(--secondary) 5%, transparent);
   }
 }
 
 .page-one .customer-details-card {
   background:
-    linear-gradient(90deg, rgb(13 160 253 / 0.028), transparent 46%),
+    linear-gradient(90deg, color-mix(in srgb, var(--primary) 3%, transparent), transparent 46%),
     var(--color-background);
-  border-color: rgb(13 160 253 / 0.18);
+  border-color: color-mix(in srgb, var(--primary) 18%, transparent);
   padding-inline: 0.5rem;
 }
 
-.page-one .customer-details-card>header {
-  border-bottom: 1px solid rgb(13 160 253 / 0.1);
+.page-one .customer-details-card > header {
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
   margin-bottom: 0.35rem;
   padding-bottom: 0.35rem;
 }
 
-.page-one .customer-details-card>header>span {
+.page-one .customer-details-card > header > span {
   align-items: center;
-  border: 1px solid rgb(13 160 253 / 0.18);
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
   border-radius: 0.125rem;
   display: inline-flex;
   height: 1.25rem;
@@ -261,8 +255,8 @@
   border-top: 1px solid transparent;
 }
 
-.page-one .customer-details-grid>.col-span-2 {
-  border-top: 1px solid rgb(13 160 253 / 0.1);
+.page-one .customer-details-grid > .col-span-2 {
+  border-top: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
   margin-top: 0.15rem;
   padding-top: 0.15rem;
 }
@@ -274,7 +268,7 @@
 
 .page-one .address-card {
   background: var(--color-background);
-  border-color: rgb(13 160 253 / 0.14);
+  border-color: color-mix(in srgb, var(--primary) 14%, transparent);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -292,7 +286,7 @@
 
 .page-one .pickup-address-card {
   background:
-    linear-gradient(90deg, rgb(13 160 253 / 0.035), transparent 42%),
+    linear-gradient(90deg, color-mix(in srgb, var(--primary) 4%, transparent), transparent 42%),
     var(--color-background);
 }
 
@@ -302,30 +296,30 @@
 
 .page-one .delivery-address-card {
   background:
-    linear-gradient(90deg, rgb(250 136 53 / 0.035), transparent 42%),
+    linear-gradient(90deg, color-mix(in srgb, var(--secondary) 4%, transparent), transparent 42%),
     var(--color-background);
-  border-color: rgb(250 136 53 / 0.16);
+  border-color: color-mix(in srgb, var(--secondary) 16%, transparent);
 }
 
 .page-one .delivery-address-card::before {
   background: var(--secondary);
 }
 
-.page-one .address-card>header {
+.page-one .address-card > header {
   align-items: center;
-  border-bottom: 1px solid rgb(13 160 253 / 0.1);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
   margin-bottom: 0.45rem;
   padding-bottom: 0.35rem;
 }
 
-.page-one .delivery-address-card>header {
-  border-bottom-color: rgb(250 136 53 / 0.12);
+.page-one .delivery-address-card > header {
+  border-bottom-color: color-mix(in srgb, var(--secondary) 12%, transparent);
 }
 
-.page-one .address-card>header>span {
+.page-one .address-card > header > span {
   align-items: center;
-  background: rgb(13 160 253 / 0.055);
-  border: 1px solid rgb(13 160 253 / 0.18);
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
   border-radius: 0.125rem;
   color: var(--primary) !important;
   display: inline-flex;
@@ -334,13 +328,13 @@
   width: 1.35rem;
 }
 
-.page-one .delivery-address-card>header>span {
-  background: rgb(250 136 53 / 0.055);
-  border-color: rgb(250 136 53 / 0.2);
+.page-one .delivery-address-card > header > span {
+  background: color-mix(in srgb, var(--secondary) 6%, transparent);
+  border-color: color-mix(in srgb, var(--secondary) 20%, transparent);
   color: var(--secondary) !important;
 }
 
-.page-one .delivery-address-card>header h3 {
+.page-one .delivery-address-card > header h3 {
   color: var(--secondary) !important;
 }
 
@@ -349,12 +343,12 @@
 }
 
 .page-one .address-note {
-  border-top: 1px solid rgb(13 160 253 / 0.08);
+  border-top: 1px solid color-mix(in srgb, var(--primary) 8%, transparent);
   padding-top: 0.35rem;
 }
 
 .page-one .delivery-address-card .address-note {
-  border-top-color: rgb(250 136 53 / 0.1);
+  border-top-color: color-mix(in srgb, var(--secondary) 10%, transparent);
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -371,7 +365,6 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 @media print {
-
   /* ── Global resets ── */
   *,
   *::before,
@@ -410,7 +403,7 @@
     background: transparent !important;
   }
 
-  main>div {
+  main > div {
     margin: 0 !important;
     padding: 0 !important;
     gap: 0 !important;
@@ -449,8 +442,8 @@
   section,
   header,
   footer,
-  article>div>section,
-  article>div>div {
+  article > div > section,
+  article > div > div {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }

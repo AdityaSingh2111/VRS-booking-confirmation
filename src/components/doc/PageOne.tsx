@@ -47,13 +47,16 @@ function BookingDetailItem({
 }) {
   return (
     <div
-      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-0.5 ${highlight ? "booking-detail-highlight" : ""
-        }`}
+      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-0.5 ${
+        highlight ? "booking-detail-highlight" : ""
+      }`}
     >
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
         style={{
-          borderColor: highlight ? "rgb(250 136 53 / 0.32)" : "rgb(13 160 253 / 0.18)",
+          borderColor: highlight
+            ? "color-mix(in srgb, var(--secondary) 32%, transparent)"
+            : "color-mix(in srgb, var(--primary) 18%, transparent)",
           color: highlight ? "var(--secondary)" : "var(--primary)",
         }}
       >
@@ -71,7 +74,7 @@ function BookingDetailItem({
         <span
           className="shrink-0 rounded-sm border px-1.5 py-0.5 text-[7.5px] font-bold uppercase tracking-[0.14em]"
           style={{
-            borderColor: "rgb(250 136 53 / 0.28)",
+            borderColor: "color-mix(in srgb, var(--secondary) 28%, transparent)",
             color: "var(--secondary)",
           }}
         >
@@ -95,13 +98,16 @@ function CustomerDetailItem({
 }) {
   return (
     <div
-      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-0.5 ${prominent ? "customer-detail-prominent" : ""
-        }`}
+      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-0.5 ${
+        prominent ? "customer-detail-prominent" : ""
+      }`}
     >
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
         style={{
-          borderColor: prominent ? "rgb(250 136 53 / 0.28)" : "rgb(13 160 253 / 0.18)",
+          borderColor: prominent
+            ? "color-mix(in srgb, var(--secondary) 28%, transparent)"
+            : "color-mix(in srgb, var(--primary) 18%, transparent)",
           color: prominent ? "var(--secondary)" : "var(--primary)",
         }}
       >
@@ -131,7 +137,7 @@ export function PageOne({ booking }: PageOneProps) {
 
         {/* ── Hero ── */}
         <section className="mt-0 border-t border-hairline pt-1.5">
-          <div className="relative overflow-hidden rounded-lg border border-emerald-200/90 bg-gradient-to-r from-emerald-50/90 via-emerald-50/40 to-white px-4 py-2.5">
+          <div className="relative overflow-hidden rounded-lg border border-success/30 bg-gradient-to-r from-success/10 via-success/5 to-white px-4 py-2.5">
             <svg
               aria-hidden="true"
               className="absolute right-3 top-1/2 h-[32mm] w-[52mm] -translate-y-1/2 opacity-[0.12]"
@@ -178,14 +184,6 @@ export function PageOne({ booking }: PageOneProps) {
                 strokeWidth="2"
                 transform="translate(-19 0)"
               />
-              <circle
-                cx="162"
-                cy="44"
-                r="4"
-                stroke="var(--success)"
-                strokeWidth="2"
-                transform="translate(0 0)"
-              />
             </svg>
 
             <div className="relative z-[1] grid grid-cols-[1fr_42mm] items-center gap-4">
@@ -194,7 +192,7 @@ export function PageOne({ booking }: PageOneProps) {
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border bg-white shadow-xs"
                     style={{
-                      borderColor: "rgb(34 197 94 / 0.35)",
+                      borderColor: "color-mix(in srgb, var(--success) 35%, transparent)",
                       color: "var(--success)",
                     }}
                   >
@@ -225,9 +223,10 @@ export function PageOne({ booking }: PageOneProps) {
                     {booking.customer.title} {booking.customer.name},
                   </p>
                   <p className="mt-0.5 text-[11.8px] leading-[1.45] text-slate-800">
-                    Thank you for choosing <span style={{ color: "var(--secondary)" }}>{company.nameFull}</span>. Your move is now in careful hands,
-                    with safe packing, timely coordination, and professional support from pickup to
-                    delivery.
+                    Thank you for choosing{" "}
+                    <span style={{ color: "var(--secondary)" }}>{company.nameFull}</span>. Your move
+                    is now in careful hands, with safe packing, timely coordination, and
+                    professional support from pickup to delivery.
                   </p>
                 </div>
 
@@ -236,7 +235,9 @@ export function PageOne({ booking }: PageOneProps) {
                     <span
                       key={c}
                       className="inline-flex items-center gap-1 rounded-sm border bg-white/80 px-2 py-0.5 text-[8px] font-semibold uppercase tracking-wider text-slate-900"
-                      style={{ borderColor: "rgb(34 197 94 / 0.25)" }}
+                      style={{
+                        borderColor: "color-mix(in srgb, var(--success) 25%, transparent)",
+                      }}
                     >
                       <Check
                         className="h-2.5 w-2.5"
@@ -259,7 +260,7 @@ export function PageOne({ booking }: PageOneProps) {
           <Card
             title="Booking Details"
             icon={<CalendarDays className="h-4 w-4" />}
-            className="page-one-card booking-details-card rounded-lg border border-sky-200/80 bg-gradient-to-br from-sky-50/50 via-slate-50/70 to-slate-50/90 px-3 py-2"
+            className="page-one-card booking-details-card rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 via-surface to-surface px-3 py-2"
           >
             <div className="booking-details-grid grid grid-cols-2 gap-x-4">
               <BookingDetailItem
@@ -341,7 +342,7 @@ export function PageOne({ booking }: PageOneProps) {
             title="Delivery Address"
             icon={<Flag className="h-4 w-4" />}
             accent
-            className="page-one-card address-card delivery-address-card rounded-lg border border-amber-200/80 bg-gradient-to-br from-amber-50/40 via-slate-50/70 to-slate-50/90 px-3 py-2"
+            className="page-one-card address-card delivery-address-card rounded-lg border border-secondary/20 bg-gradient-to-br from-secondary/5 via-surface to-surface px-3 py-2"
           >
             <p className="address-copy text-[12px] font-semibold leading-[1.55] text-foreground">
               {booking.delivery.address}
@@ -433,7 +434,9 @@ export function PageOne({ booking }: PageOneProps) {
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
                   <Phone className="h-3.5 w-3.5 text-slate-700" />
-                  <span className="text-[12px] font-semibold text-slate-900">{contact.tollFree}</span>
+                  <span className="text-[12px] font-semibold text-slate-900">
+                    {contact.tollFree}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -449,33 +452,36 @@ export function PageOne({ booking }: PageOneProps) {
             </div>
 
             {/* Centre: Booking Executive (identical layout & style) */}
-            {booking.executiveName && (() => {
-              const exec = findExecutive(booking.executiveName);
-              return exec ? (
-                <div className="border-l border-hairline pl-4">
-                  <h3
-                    className="mb-2 font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
-                    style={{ color: "var(--primary)" }}
-                  >
-                    Booking Executive
-                  </h3>
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-2">
-                      <UserCheck className="h-3.5 w-3.5 text-slate-700" />
-                      <span className="text-[12px] font-semibold text-slate-900">{exec.name}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <IdCard className="h-3.5 w-3.5 text-slate-700" />
-                      <span className="text-[12px] text-slate-900">{exec.employeeId}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Phone className="h-3.5 w-3.5 text-slate-700" />
-                      <span className="text-[12px] text-slate-900">{exec.mobile}</span>
+            {booking.executiveName &&
+              (() => {
+                const exec = findExecutive(booking.executiveName);
+                return exec ? (
+                  <div className="border-l border-hairline pl-4">
+                    <h3
+                      className="mb-2 font-serif text-[11px] font-bold uppercase tracking-[0.15em] underline decoration-[1.2px]"
+                      style={{ color: "var(--primary)" }}
+                    >
+                      Booking Executive
+                    </h3>
+                    <div className="space-y-1.5">
+                      <div className="flex items-center gap-2">
+                        <UserCheck className="h-3.5 w-3.5 text-slate-700" />
+                        <span className="text-[12px] font-semibold text-slate-900">
+                          {exec.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <IdCard className="h-3.5 w-3.5 text-slate-700" />
+                        <span className="text-[12px] text-slate-900">{exec.employeeId}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Phone className="h-3.5 w-3.5 text-slate-700" />
+                        <span className="text-[12px] text-slate-900">{exec.mobile}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ) : null;
-            })()}
+                ) : null;
+              })()}
 
             {/* Right: Verify Booking QR */}
             <div className="flex flex-col items-center">
@@ -487,7 +493,12 @@ export function PageOne({ booking }: PageOneProps) {
               </h3>
 
               <div className="rounded-md border border-hairline bg-white p-1 shadow-sm">
-                <QRCode value={contact.websiteUrl} size={54} bgColor="transparent" fgColor="#000000ff" />
+                <QRCode
+                  value={contact.websiteUrl}
+                  size={54}
+                  bgColor="transparent"
+                  fgColor="#000000ff"
+                />
               </div>
             </div>
           </div>
