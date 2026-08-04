@@ -45,22 +45,30 @@ export function DocHeader() {
       <header className="flex items-center justify-between pb-2">
         <Logo />
 
-        <div className="flex flex-col items-end text-right">
-          <div className="flex items-center gap-1.5">
-            <PhoneCall className="h-7.5 w-4.5" style={{ color: "var(--primary)" }} />
-            <span className="text-[11.5px] font-semibold uppercase tracking-[0.24em] text-slate-700">
+        <div className="grid grid-cols-[auto_auto] gap-x-3 gap-y-1 items-center justify-end">
+          {/* Row 1 */}
+          <div className="flex items-center gap-1.5 text-slate-700">
+            <PhoneCall className="h-7.5 w-4.5 shrink-0" style={{ color: "var(--primary)" }} />
+            <span className="text-[11.5px] font-semibold uppercase tracking-[0.24em] whitespace-nowrap">
               Toll Free:
             </span>
-            <span className="text-[17px] font-bold leading-none text-slate-900">
+          </div>
+          <div className="flex items-center">
+            <span className="text-[17px] font-bold leading-none text-slate-900 whitespace-nowrap">
               {contact.tollFreeDisplay}
             </span>
           </div>
 
-          <div className="mt-2 flex items-center gap-1.5">
-            <Clock3 className="h-7.5 w-4.5" style={{ color: "var(--secondary)" }} />
-            <span className="text-[12.5px] font-semibold tracking-[0.074em] text-slate-600">
+          {/* Row 2 */}
+          <div className="flex items-center gap-1.5 text-slate-600">
+            <Clock3 className="h-7.5 w-4.5 shrink-0" style={{ color: "var(--secondary)" }} />
+            <span className="text-[12.5px] font-semibold tracking-[0.074em] whitespace-nowrap">
               Support Time:
-              <span className="font-extrabold text-slate-900"> {contact.supportHours}</span>
+            </span>
+          </div>
+          <div className="flex items-center">
+            <span className="text-[12.5px] font-extrabold text-slate-900 whitespace-nowrap">
+              {contact.supportHours}
             </span>
           </div>
         </div>
