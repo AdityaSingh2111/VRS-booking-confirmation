@@ -12,7 +12,7 @@ import { iconMap } from "@/lib/icon-map";
 
 export function PageTwo() {
   return (
-    <article className="sheet mx-auto flex flex-col rounded-sm p-[12mm]">
+    <article className="sheet mx-auto flex flex-col rounded-sm p-[15mm]">
       <Watermark />
       <div className="relative z-[1] flex min-h-full flex-1 flex-col">
         <DocHeader />
