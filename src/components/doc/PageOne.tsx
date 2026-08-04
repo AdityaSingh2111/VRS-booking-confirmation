@@ -28,7 +28,6 @@ import {
 } from "lucide-react";
 import { Card, DocHeader, Footer, Watermark } from "./primitives";
 import { company, contact, nextSteps, heroChips, trustBadges } from "@/config/company";
-import { theme } from "@/config/theme";
 import { findExecutive } from "@/config/executives";
 import { iconMap } from "@/lib/icon-map";
 import QRCode from "react-qr-code";
@@ -488,7 +487,7 @@ export function PageOne({ booking }: PageOneProps) {
               </h3>
 
               <div className="rounded-md border border-hairline bg-white p-1 shadow-sm">
-                <QRCode value={contact.websiteUrl} size={54} bgColor={`${theme.colors.secondary}40`} fgColor="#000000ff" />
+                <QRCode value={contact.websiteUrl} size={54} bgColor="transparent" fgColor="#000000ff" />
               </div>
             </div>
           </div>

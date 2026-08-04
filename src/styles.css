@@ -213,7 +213,7 @@
 }
 
 .page-one .booking-detail-highlight {
-  color: var(--brand-orange);
+  color: var(--secondary);
 }
 
 @media screen {
@@ -268,7 +268,7 @@
 }
 
 .page-one .customer-detail-prominent p:last-child {
-  color: var(--brand-orange);
+  color: var(--secondary);
   font-weight: 700;
 }
 
@@ -297,7 +297,7 @@
 }
 
 .page-one .pickup-address-card::before {
-  background: var(--brand-blue);
+  background: var(--primary);
 }
 
 .page-one .delivery-address-card {
@@ -308,7 +308,7 @@
 }
 
 .page-one .delivery-address-card::before {
-  background: var(--brand-orange);
+  background: var(--secondary);
 }
 
 .page-one .address-card>header {
@@ -327,7 +327,7 @@
   background: rgb(13 160 253 / 0.055);
   border: 1px solid rgb(13 160 253 / 0.18);
   border-radius: 0.125rem;
-  color: var(--brand-blue) !important;
+  color: var(--primary) !important;
   display: inline-flex;
   height: 1.35rem;
   justify-content: center;
@@ -337,11 +337,11 @@
 .page-one .delivery-address-card>header>span {
   background: rgb(250 136 53 / 0.055);
   border-color: rgb(250 136 53 / 0.2);
-  color: var(--brand-orange) !important;
+  color: var(--secondary) !important;
 }
 
 .page-one .delivery-address-card>header h3 {
-  color: var(--brand-orange) !important;
+  color: var(--secondary) !important;
 }
 
 .page-one .address-copy {

@@ -5,17 +5,6 @@
  */
 
 import logo from "@/assets/logo.webp";
-import { theme } from "./theme";
-
-// ─── Brand Colors ────────────────────────────────────────────────
-export const brand = {
-  blue: theme.colors.primary,
-  orange: theme.colors.secondary,
-  green: theme.colors.tertiary,
-  primary: theme.colors.primary,
-  secondary: theme.colors.secondary,
-  tertiary: theme.colors.tertiary,
-} as const;
 
 // ─── Company Identity ────────────────────────────────────────────
 export const company = {
