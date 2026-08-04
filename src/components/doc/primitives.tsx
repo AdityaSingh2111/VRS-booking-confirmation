@@ -94,19 +94,22 @@ export function Card({
   accent = false,
   children,
   className = "",
+  style,
 }: {
   title?: string;
   icon?: ReactNode;
   accent?: boolean;
   children: ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <section
-      className={`relative border-y border-border py-3 ${className}`}
+      className={`relative py-3 ${className}`}
       style={{
         pageBreakInside: "avoid",
         breakInside: "avoid",
+        ...style,
       }}
     >
       {accent && (

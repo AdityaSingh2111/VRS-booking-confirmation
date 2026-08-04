@@ -1,5 +1,5 @@
-import { User, Phone, Mail } from "lucide-react";
-import { UseFormRegister, FieldErrors } from "react-hook-form";
+import { MessageCircle, User, Phone, Mail } from "lucide-react";
+import { UseFormRegister, UseFormWatch, FieldErrors } from "react-hook-form";
 
 import { FormInput } from "@/components/form/FormInput";
 import { FormSection } from "@/components/form/FormSection";
@@ -9,10 +9,13 @@ import { customerTitles } from "@/config/services";
 
 interface CustomerSectionProps {
   register: UseFormRegister<BookingFormValues>;
+  watch: UseFormWatch<BookingFormValues>;
   errors: FieldErrors<BookingFormValues>;
 }
 
-export function CustomerSection({ register, errors }: CustomerSectionProps) {
+export function CustomerSection({ register, watch, errors }: CustomerSectionProps) {
+  const whatsappSameAsPhone = watch("whatsappSameAsPhone");
+
   return (
     <FormSection
       title="Customer Information"
@@ -40,6 +43,30 @@ export function CustomerSection({ register, errors }: CustomerSectionProps) {
             register={register("phone")}
             error={errors.phone?.message}
           />
+        </div>
+
+        <div className="md:col-span-2 space-y-4">
+          <label className="flex cursor-pointer items-center gap-3">
+            <input
+              type="checkbox"
+              {...register("whatsappSameAsPhone")}
+              className="h-4 w-4 cursor-pointer rounded border-slate-300 accent-primary"
+            />
+            <span className="text-sm font-medium text-slate-700">
+              WhatsApp number is same as Phone Number
+            </span>
+          </label>
+
+          {!whatsappSameAsPhone && (
+            <FormInput
+              label="WhatsApp Number"
+              placeholder="9876543210"
+              type="tel"
+              icon={MessageCircle}
+              register={register("whatsapp")}
+              error={errors.whatsapp?.message}
+            />
+          )}
         </div>
 
         <div className="md:col-span-2">

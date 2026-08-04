@@ -3,15 +3,21 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formDefaults } from "@/config/services";
 
+const phoneSchema = z
+  .string()
+  .min(10, "Please enter a valid 10-digit phone number")
+  .max(10, "Please enter a valid 10-digit phone number");
+
 const bookingSchema = z
   .object({
     title: z.string(),
     customerName: z.string().min(2, "Please enter the customer's full name"),
 
-    phone: z
-      .string()
-      .min(10, "Please enter a valid 10-digit phone number")
-      .max(10, "Please enter a valid 10-digit phone number"),
+    phone: phoneSchema,
+
+    whatsappSameAsPhone: z.boolean(),
+
+    whatsapp: z.string().optional(),
 
     email: z
       .string()
@@ -40,6 +46,18 @@ const bookingSchema = z
 
     executiveName: z.string().optional(),
   })
+  .refine(
+    (data) => {
+      if (!data.whatsappSameAsPhone) {
+        return (data.whatsapp?.length ?? 0) >= 10 && (data.whatsapp?.length ?? 0) <= 10;
+      }
+      return true;
+    },
+    {
+      path: ["whatsapp"],
+      message: "Please enter a valid 10-digit WhatsApp number",
+    },
+  )
   .refine((data) => data.totalAmount > 0, {
     path: ["totalAmount"],
     message: "Please enter a total amount greater than zero",
@@ -59,6 +77,8 @@ export const defaultBookingValues: BookingFormValues = {
   title: formDefaults.title,
   customerName: "",
   phone: "",
+  whatsappSameAsPhone: true,
+  whatsapp: "",
   email: "",
 
   bookingDate: new Date().toISOString().slice(0, 10),

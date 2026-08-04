@@ -10,6 +10,7 @@ export interface BookingData {
     title: string;
     name: string;
     phone: string;
+    whatsapp: string;
     email: string;
   };
 

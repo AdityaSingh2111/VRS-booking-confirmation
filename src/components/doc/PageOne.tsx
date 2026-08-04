@@ -25,6 +25,7 @@ import {
   MailIcon,
   UserCheck,
   IdCard,
+  MessageCircle,
 } from "lucide-react";
 import { Card, DocHeader, Footer, Watermark } from "./primitives";
 import { company, contact, nextSteps, heroChips, trustBadges } from "@/config/company";
@@ -54,10 +55,8 @@ function BookingDetailItem({
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
         style={{
-          borderColor: highlight
-            ? "color-mix(in srgb, var(--secondary) 32%, transparent)"
-            : "color-mix(in srgb, var(--primary) 18%, transparent)",
-          color: highlight ? "var(--secondary)" : "var(--primary)",
+          borderColor: "color-mix(in srgb, var(--primary) 18%, transparent)",
+          color: "var(--primary)",
         }}
       >
         {icon}
@@ -74,8 +73,8 @@ function BookingDetailItem({
         <span
           className="shrink-0 rounded-sm border px-1.5 py-0.5 text-[7.5px] font-bold uppercase tracking-[0.14em]"
           style={{
-            borderColor: "color-mix(in srgb, var(--secondary) 28%, transparent)",
-            color: "var(--secondary)",
+            borderColor: "color-mix(in srgb, var(--primary) 28%, transparent)",
+            color: "var(--primary)",
           }}
         >
           ID
@@ -105,10 +104,8 @@ function CustomerDetailItem({
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
         style={{
-          borderColor: prominent
-            ? "color-mix(in srgb, var(--secondary) 28%, transparent)"
-            : "color-mix(in srgb, var(--primary) 18%, transparent)",
-          color: prominent ? "var(--secondary)" : "var(--primary)",
+          borderColor: "color-mix(in srgb, var(--secondary) 28%, transparent)",
+          color: "var(--secondary)",
         }}
       >
         {icon}
@@ -256,7 +253,7 @@ export function PageOne({ booking }: PageOneProps) {
         </section>
 
         {/* ── Details Grid ── */}
-        <div className="grid grid-cols-2 gap-1.5 pt-1.0">
+        <div className="grid grid-cols-2 gap-2 pt-1">
           <Card
             title="Booking Details"
             icon={<CalendarDays className="h-4 w-4" />}
@@ -301,8 +298,9 @@ export function PageOne({ booking }: PageOneProps) {
             title="Customer Details"
             icon={<CircleUserRound className="h-4 w-4" />}
             className="page-one-card customer-details-card rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
+            style={{ "--primary": "var(--secondary)" } as React.CSSProperties}
           >
-            <div className="customer-details-grid grid grid-cols-2 gap-x-3">
+            <div className="customer-details-grid grid grid-cols-2 gap-x-3 gap-y-1">
               <CustomerDetailItem
                 label="Customer Name"
                 value={booking.customer.title + " " + booking.customer.name}
@@ -312,23 +310,24 @@ export function PageOne({ booking }: PageOneProps) {
                 label="Phone Number"
                 value={booking.customer.phone}
                 icon={<Phone className="h-3.5 w-3.5" />}
-                prominent
               />
-              <div className="col-span-2">
-                <CustomerDetailItem
-                  label="Email Address"
-                  value={booking.customer.email || "N/A"}
-                  icon={<MailIcon className="h-3.5 w-3.5" />}
-                  prominent
-                />
-              </div>
+              <CustomerDetailItem
+                label="Email Address"
+                value={booking.customer.email || "N/A"}
+                icon={<MailIcon className="h-3.5 w-3.5" />}
+              />
+              <CustomerDetailItem
+                label="WhatsApp Number"
+                value={booking.customer.whatsapp}
+                icon={<MessageCircle className="h-3.5 w-3.5" />}
+              />
             </div>
           </Card>
 
           <Card
             title="Pickup Address"
             icon={<MapPin className="h-4 w-4" />}
-            className="page-one-card address-card pickup-address-card rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
+            className="page-one-card address-card pickup-address-card rounded-lg border px-3 py-2"
           >
             <p className="address-copy text-[12px] font-semibold leading-[1.55] text-foreground">
               {booking.pickup.address}
@@ -341,8 +340,7 @@ export function PageOne({ booking }: PageOneProps) {
           <Card
             title="Delivery Address"
             icon={<Flag className="h-4 w-4" />}
-            accent
-            className="page-one-card address-card delivery-address-card rounded-lg border border-secondary/20 bg-gradient-to-br from-secondary/5 via-surface to-surface px-3 py-2"
+            className="page-one-card address-card delivery-address-card rounded-lg border px-3 py-2"
           >
             <p className="address-copy text-[12px] font-semibold leading-[1.55] text-foreground">
               {booking.delivery.address}
@@ -354,7 +352,7 @@ export function PageOne({ booking }: PageOneProps) {
         </div>
 
         {/* ── Payment Summary ── */}
-        <div className="pt-1.5">
+        <div className="pt-1">
           <Card title="Payment Summary" className="page-one-card">
             <div className="grid grid-cols-3 divide-x divide-hairline rounded-lg border border-slate-200/90 bg-slate-50/90 p-3">
               <div className="pr-4">
@@ -392,7 +390,7 @@ export function PageOne({ booking }: PageOneProps) {
         </div>
 
         {/* ── What Happens Next ── */}
-        <div className="pt-1.5">
+        <div className="pt-1">
           <section
             className="page-one-section rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
             style={{ pageBreakInside: "avoid", breakInside: "avoid" }}

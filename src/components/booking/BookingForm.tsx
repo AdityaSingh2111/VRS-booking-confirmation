@@ -53,6 +53,7 @@ export function BookingForm() {
         title: data.title,
         name: data.customerName,
         phone: data.phone,
+        whatsapp: data.whatsappSameAsPhone ? data.phone : (data.whatsapp ?? data.phone),
         email: data.email ?? "",
       },
 
@@ -112,7 +113,7 @@ export function BookingForm() {
           Fill in the details below to generate a Booking Confirmation document
         </p>
       </div>
-      <CustomerSection register={register} errors={errors} />
+      <CustomerSection register={register} watch={watch} errors={errors} />
       <BookingSection register={register} errors={errors} control={control} />
       <AddressSection register={register} errors={errors} />
       <PaymentSection register={register} errors={errors} watch={watch} />
