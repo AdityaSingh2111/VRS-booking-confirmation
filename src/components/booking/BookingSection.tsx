@@ -27,7 +27,13 @@ export function BookingSection({ register, errors, control }: BookingSectionProp
       iconColor="text-secondary"
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <FormInput label="Booking ID" placeholder="Auto Generated" icon={Hash} readOnly />
+        <FormInput
+          id="bookingId"
+          label="Booking ID"
+          placeholder="Auto Generated"
+          icon={Hash}
+          readOnly
+        />
 
         <FormInput
           label="Booking Date"
@@ -58,6 +64,7 @@ export function BookingSection({ register, errors, control }: BookingSectionProp
           control={control}
           render={({ field }) => (
             <FormCombobox
+              id="executiveName"
               label="Booking Executive"
               icon={UserCheck}
               options={executiveOptions}

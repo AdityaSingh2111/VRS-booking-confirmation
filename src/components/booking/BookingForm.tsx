@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { defaultBookingValues } from "@/hooks/useBookingForm";
 import { useNavigate } from "@tanstack/react-router";
 import { generateBookingId, generateReferenceNumber } from "@/utils/bookingId";
 import { CustomerSection } from "./CustomerSection";
 import { BookingSection } from "./BookingSection";
 import { AddressSection } from "./AddressSection";
-import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { PaymentSection } from "./PaymentSection";
 import { FormActions } from "./FormActions";
 
@@ -16,7 +15,6 @@ import { BookingData } from "@/types/booking";
 
 export function BookingForm() {
   const formData = useBookingStore((state) => state.formData);
-  const [loading, setLoading] = useState(false);
   const {
     register,
     watch,
@@ -39,7 +37,7 @@ export function BookingForm() {
   const setBooking = useBookingStore((state) => state.setBooking);
   const setFormData = useBookingStore((state) => state.setFormData);
 
-  const onSubmit = async (data: BookingFormValues) => {
+  const onSubmit = (data: BookingFormValues) => {
     const booking: BookingData = {
       bookingId: generateBookingId(),
 
@@ -85,19 +83,11 @@ export function BookingForm() {
 
     setBooking(booking);
 
-    setLoading(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setLoading(false);
-
     navigate({
       to: "/preview",
     });
   };
-  if (loading) {
-    return <LoadingScreen />;
-  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">

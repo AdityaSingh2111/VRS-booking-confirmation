@@ -8,5 +8,6 @@
 
 export * from "./company";
 export * from "./executives";
+export * from "./phone";
 export * from "./services";
 export * from "./seo";

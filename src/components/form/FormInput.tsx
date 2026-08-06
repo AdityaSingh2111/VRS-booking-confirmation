@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { LucideIcon } from "lucide-react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
@@ -12,6 +13,7 @@ interface FormInputProps {
   value?: string | number;
   disabled?: boolean;
   className?: string;
+  id?: string;
 }
 
 export function FormInput({
@@ -25,10 +27,17 @@ export function FormInput({
   value,
   disabled = false,
   className = "",
+  id,
 }: FormInputProps) {
+  const generatedId = useId();
+  const inputId = id ?? register?.name ?? generatedId;
+  const errorId = `${inputId}-error`;
+
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-semibold text-slate-700">{label}</label>
+      <label htmlFor={inputId} className="block text-sm font-semibold text-slate-700">
+        {label}
+      </label>
 
       <div className="relative">
         {Icon && (
@@ -36,11 +45,14 @@ export function FormInput({
         )}
 
         <input
+          id={inputId}
           type={type}
           placeholder={placeholder}
           readOnly={readOnly}
           disabled={disabled}
           value={value}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error ? errorId : undefined}
           {...register}
           className={`
             w-full min-w-0 rounded-xl border px-4 py-3 transition-all duration-200 outline-none
@@ -53,7 +65,11 @@ export function FormInput({
         />
       </div>
 
-      {error && <p className="text-sm text-danger">{error}</p>}
+      {error && (
+        <p id={errorId} role="alert" className="text-sm text-danger">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

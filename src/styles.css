@@ -227,6 +227,42 @@
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   PDF PREVIEW — RESPONSIVE SCREEN SCALING
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media screen {
+  .pdf-preview-viewport {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pdf-preview-scale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transform-origin: top center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .pdf-preview-viewport {
+    overflow-x: hidden;
+    padding-inline: 1rem;
+  }
+
+  .pdf-preview-scale {
+    /* 210mm ≈ 794px at 96dpi; two A4 pages ≈ 2244px tall */
+    --preview-scale: min(1, calc((100vw - 2rem) / 794px));
+    transform: scale(var(--preview-scale));
+    width: 794px;
+    margin-bottom: calc(2244px * (var(--preview-scale) - 1));
+  }
+}
+
 .page-one .customer-details-card {
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--secondary) 3%, transparent), transparent 46%),
@@ -444,6 +480,15 @@
     padding: 0 !important;
     margin: 0 !important;
     gap: 0 !important;
+  }
+
+  .pdf-preview-viewport,
+  .pdf-preview-scale {
+    transform: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
   }
 
   /* ── Ensure SVG icons render in print ── */

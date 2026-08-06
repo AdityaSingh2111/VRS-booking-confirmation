@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
+import { company } from "@/config/company";
 import { BookingData } from "@/types/booking";
 import { BookingFormValues } from "@/hooks/useBookingForm";
 
@@ -56,7 +57,7 @@ export const useBookingStore = create<BookingStore>()(
         }),
     }),
     {
-      name: "vrs-booking-store",
+      name: `${company.nameSlug}-booking-store`,
 
       storage: createJSONStorage(() => sessionStorage),
     },

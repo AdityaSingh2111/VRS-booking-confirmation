@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { phoneValidation } from "@/config/phone";
 import { formDefaults } from "@/config/services";
 
 const phoneSchema = z
   .string()
-  .min(10, "Please enter a valid 10-digit phone number")
-  .max(10, "Please enter a valid 10-digit phone number");
+  .min(phoneValidation.minLength, phoneValidation.invalidMessage)
+  .max(phoneValidation.maxLength, phoneValidation.invalidMessage);
 
 const bookingSchema = z
   .object({
@@ -49,13 +50,24 @@ const bookingSchema = z
   .refine(
     (data) => {
       if (!data.whatsappSameAsPhone) {
-        return (data.whatsapp?.length ?? 0) >= 10 && (data.whatsapp?.length ?? 0) <= 10;
+        const length = data.whatsapp?.length ?? 0;
+        return length >= phoneValidation.minLength && length <= phoneValidation.maxLength;
       }
       return true;
     },
     {
       path: ["whatsapp"],
-      message: "Please enter a valid 10-digit WhatsApp number",
+      message: phoneValidation.whatsappInvalidMessage,
+    },
+  )
+  .refine(
+    (data) => {
+      if (!data.bookingDate || !data.shiftingDate) return true;
+      return data.shiftingDate >= data.bookingDate;
+    },
+    {
+      path: ["shiftingDate"],
+      message: "Shifting date must be on or after the booking date",
     },
   )
   .refine((data) => data.totalAmount > 0, {

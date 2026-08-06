@@ -6,13 +6,11 @@
  */
 import React from "react";
 import {
-  BadgeCheck,
   CheckCircle2,
   CalendarDays,
   CircleUserRound,
   MapPin,
   Flag,
-  Wallet,
   Phone,
   Mail,
   Globe,
@@ -26,8 +24,9 @@ import {
   UserCheck,
   IdCard,
   MessageCircle,
+  CreditCard,
 } from "lucide-react";
-import { Card, DocHeader, Footer, Watermark } from "./primitives";
+import { Card, DocHeader, Footer } from "./primitives";
 import { company, contact, nextSteps, heroChips, trustBadges } from "@/config/company";
 import { findExecutive } from "@/config/executives";
 import { iconMap } from "@/lib/icon-map";
@@ -48,8 +47,9 @@ function BookingDetailItem({
 }) {
   return (
     <div
-      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-0.5 ${highlight ? "booking-detail-highlight" : ""
-        }`}
+      className={`booking-detail-item group flex min-w-0 items-center gap-2.5 py-0.5 ${
+        highlight ? "booking-detail-highlight" : ""
+      }`}
     >
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
@@ -113,7 +113,10 @@ function CustomerDetailItem({
         <p className="text-[7.5px] font-semibold uppercase tracking-[0.18em] text-slate-700">
           {label}
         </p>
-        <p className="mt-0.5 break-words text-[11.5px] font-semibold leading-none text-foreground" style={{ overflowWrap: "anywhere" }}>
+        <p
+          className="mt-0.5 break-words text-[11.5px] font-semibold leading-none text-foreground"
+          style={{ overflowWrap: "anywhere" }}
+        >
           {value}
         </p>
       </div>
@@ -246,7 +249,19 @@ export function PageOne({ booking }: PageOneProps) {
                 </div>
               </div>
 
-              <div className="h-[25mm]" aria-hidden="true" />
+              <div className="flex flex-col items-end justify-start self-start pt-0.5">
+                <p className="text-[7px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+                  Booking Status
+                </p>
+                <span
+                  className="mt-0.5 inline-flex items-center rounded-sm border bg-white/90 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-foreground shadow-xs"
+                  style={{
+                    borderColor: "color-mix(in srgb, var(--success) 35%, transparent)",
+                  }}
+                >
+                  {booking.payment.status}
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -358,36 +373,47 @@ export function PageOne({ booking }: PageOneProps) {
         {/* ── Payment Summary ── */}
         <div className="pt-1">
           <Card title="Payment Summary" className="page-one-card">
-            <div className="grid grid-cols-3 divide-x divide-hairline rounded-lg border border-slate-200/90 bg-slate-50/90 p-3">
-              <div className="pr-4">
-                <p className="text-[9.0px] font-semibold uppercase tracking-[0.16em] text-slate-700">
+            <div className="grid grid-cols-4 divide-x divide-hairline rounded-lg border border-slate-200/90 bg-slate-50/90 px-2.5 py-2.5">
+              <div className="pr-3">
+                <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-slate-700">
                   Total Amount
                 </p>
-                <p className="mt-2 text-[22px] font-semibold leading-none tracking-tight text-foreground">
+                <p className="mt-1.5 text-[18px] font-semibold leading-none tracking-tight text-foreground">
                   ₹{booking.payment.total.toLocaleString("en-IN")}
                 </p>
               </div>
-              <div className="px-4">
-                <p className="text-[9.0px] font-semibold uppercase tracking-[0.16em] text-slate-700">
+              <div className="px-3">
+                <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-slate-700">
                   Advance Paid
                 </p>
                 <p
-                  className="mt-2 text-[22px] font-semibold leading-none tracking-tight"
+                  className="mt-1.5 text-[18px] font-semibold leading-none tracking-tight"
                   style={{ color: "var(--success)" }}
                 >
                   ₹{booking.payment.advance.toLocaleString("en-IN")}
                 </p>
               </div>
-              <div className="pl-4">
-                <p className="text-[9.0px] font-semibold uppercase tracking-[0.16em] text-slate-700">
+              <div className="px-3">
+                <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-slate-700">
                   Balance Amount
                 </p>
                 <p
-                  className="mt-2 text-[24px] font-extrabold leading-none tracking-tight"
+                  className="mt-1.5 text-[20px] font-extrabold leading-none tracking-tight"
                   style={{ color: "var(--secondary)" }}
                 >
                   ₹{booking.payment.balance.toLocaleString("en-IN")}
                 </p>
+              </div>
+              <div className="pl-3">
+                <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-slate-700">
+                  Payment Method
+                </p>
+                <div className="mt-1.5 flex items-center gap-1">
+                  <CreditCard className="h-3 w-3 shrink-0 text-slate-700" strokeWidth={2.2} />
+                  <p className="text-[13px] font-semibold leading-none tracking-tight text-foreground">
+                    {booking.payment.method}
+                  </p>
+                </div>
               </div>
             </div>
           </Card>
@@ -437,7 +463,7 @@ export function PageOne({ booking }: PageOneProps) {
                 <div className="flex items-center gap-2">
                   <Phone className="h-3.5 w-3.5 text-slate-700" />
                   <span className="text-[12px] font-semibold text-slate-900">
-                    {contact.tollFree}
+                    {contact.supportPhone}
                   </span>
                 </div>
 

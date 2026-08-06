@@ -92,7 +92,11 @@ function PreviewPage() {
 
       {/* Document */}
       <div className="document-container mx-auto flex max-w-6xl flex-col items-center gap-8 py-10">
-        <BookingDocument booking={booking} />
+        <div className="pdf-preview-viewport">
+          <div className="pdf-preview-scale">
+            <BookingDocument booking={booking} />
+          </div>
+        </div>
       </div>
     </main>
   );

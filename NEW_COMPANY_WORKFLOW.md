@@ -87,7 +87,7 @@ Replace placeholder assets with the new company's visual identity:
 
 ## 4. Color & Theme Centralization
 
-Open [`src/styles.css`](file:///c:/VRS/booking-confirmation/src/styles.css) and update `:root` custom properties with your brand colors:
+Open [`src/styles.css`](./src/styles.css) and update `:root` custom properties with your brand colors:
 
 ```css
 :root {
@@ -122,29 +122,33 @@ Open [`src/styles.css`](file:///c:/VRS/booking-confirmation/src/styles.css) and 
 
 Update company data across the configuration files:
 
-### 5.1 Business Identity — [`src/config/company.ts`](file:///c:/VRS/booking-confirmation/src/config/company.ts)
+### 5.1 Business Identity — [`src/config/company.ts`](./src/config/company.ts)
 
-- [ ] Update `company.name`, `nameFull`, `legalName`, `tagline`.
+- [ ] Update `company.name`, `nameSlug`, `nameFull`, `legalName`, `tagline`.
 - [ ] Update `company.gst`, `iso`, `jurisdiction`.
-- [ ] Update `contact.phone`, `phone2`, `tollFree`, `tollFreeDisplay`, `supportHours`, `email`, `website`, `websiteUrl`.
+- [ ] Update `contact.phone`, `phone2`, `supportPhone`, `tollFreeDisplay`, `supportHours`, `email`, `website`, `websiteUrl`.
 - [ ] Update `trustBadges` list and `nextSteps` customer instructions.
 - [ ] Update `bookingConfig.idPrefix` and `referencePrefix`.
 
-### 5.2 Services & Form Options — [`src/config/services.ts`](file:///c:/VRS/booking-confirmation/src/config/services.ts)
+### 5.2 Services & Form Options — [`src/config/services.ts`](./src/config/services.ts)
 
 - [ ] Update `serviceTypes` and `paymentMethods` arrays.
 
-### 5.3 Executives Directory — [`src/config/executives.ts`](file:///c:/VRS/booking-confirmation/src/config/executives.ts)
+### 5.3 Executives Directory — [`src/config/executives.ts`](./src/config/executives.ts)
 
 - [ ] Populate `bookingExecutives` array (`employeeId`, `name`, `mobile`).
 
-### 5.4 Terms & Conditions — [`src/content/terms.ts`](file:///c:/VRS/booking-confirmation/src/content/terms.ts)
+### 5.4 Terms & Conditions — [`src/content/terms.ts`](./src/content/terms.ts)
 
 - [ ] Update legal clauses and terms points rendered on Page 2.
 
-### 5.5 SEO Metadata — [`src/config/seo.ts`](file:///c:/VRS/booking-confirmation/src/config/seo.ts)
+### 5.5 SEO Metadata — [`src/config/seo.ts`](./src/config/seo.ts)
 
 - [ ] Update `seo.siteName` and target production `deployUrl`.
+
+### 5.6 Phone Validation — [`src/config/phone.ts`](./src/config/phone.ts)
+
+- [ ] Update `phoneValidation` country code, length limits, and error messages for your region.
 
 ---
 
@@ -187,7 +191,7 @@ git push -u origin main
 
 ### Step 7.2: Deploy to Production
 
-For step-by-step production hosting setup (Vercel, Node server, Cloudflare Pages, Netlify), see **[DEPLOYMENT.md]**.
+For step-by-step production hosting setup (Vercel, Node server, Cloudflare Pages, Netlify), see **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
 
 ---
 

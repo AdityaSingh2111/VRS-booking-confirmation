@@ -51,6 +51,7 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
         />
 
         <FormInput
+          id="balanceAmount"
           label="Balance Amount"
           type="number"
           icon={IndianRupee}
@@ -58,7 +59,7 @@ export function PaymentSection({ register, errors, watch }: PaymentSectionProps)
           value={balance}
         />
         {advanceExceeded && (
-          <p className="text-sm font-semibold text-danger">
+          <p id="balanceAmount-error" role="alert" className="text-sm font-semibold text-danger">
             Advance payment cannot be more than the total amount.
           </p>
         )}

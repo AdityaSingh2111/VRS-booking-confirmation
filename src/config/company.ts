@@ -9,6 +9,8 @@ import logo from "@/assets/logo.webp";
 // ─── Company Identity ────────────────────────────────────────────
 export const company = {
   name: "VRS Cargo",
+  /** URL-safe slug used for storage keys and deployment identifiers. */
+  nameSlug: "vrs-cargo",
   nameFull: "VRS Cargo Packers and Movers",
   legalName: "VRS Cargo Packers and Movers Pvt. Ltd.",
   tagline: "Every Move, Managed Right",
@@ -23,7 +25,7 @@ export const company = {
 export const contact = {
   phone: "+91 93440 07343",
   phone2: "+91 93449 07343",
-  tollFree: "04446279150",
+  supportPhone: "04446279150",
   /** Formatted toll-free number shown in the document header. */
   tollFreeDisplay: "1800 270 9949",
   /** Support hours shown in the document header. */

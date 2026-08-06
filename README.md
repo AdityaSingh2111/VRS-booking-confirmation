@@ -71,5 +71,5 @@ booking-confirmation/
 
 ## 📖 Documentation Index
 
-- **[NEW_COMPANY_WORKFLOW.md](file:///c:/VRS/booking-confirmation/NEW_COMPANY_WORKFLOW.md)**: Step-by-step guide for cloning, rebranding, setting colors, and configuring a new company instance.
-- **[DEPLOYMENT.md](file:///c:/VRS/booking-confirmation/DEPLOYMENT.md)**: Production deployment guide for Vercel, Node server, Cloudflare Pages, and Netlify.
+- **[NEW_COMPANY_WORKFLOW.md](./NEW_COMPANY_WORKFLOW.md)**: Step-by-step guide for cloning, rebranding, setting colors, and configuring a new company instance.
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)**: Production deployment guide for Vercel, Node server, Cloudflare Pages, and Netlify.

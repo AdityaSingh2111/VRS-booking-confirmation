@@ -46,8 +46,9 @@ export function CustomerSection({ register, watch, errors }: CustomerSectionProp
         </div>
 
         <div className="md:col-span-2 space-y-4">
-          <label className="flex cursor-pointer items-center gap-3">
+          <label htmlFor="whatsappSameAsPhone" className="flex cursor-pointer items-center gap-3">
             <input
+              id="whatsappSameAsPhone"
               type="checkbox"
               {...register("whatsappSameAsPhone")}
               className="h-4 w-4 cursor-pointer rounded border-slate-300 accent-primary"

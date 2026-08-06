@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import { LucideIcon, ChevronDown, Search, X } from "lucide-react";
 
 interface FormComboboxProps {
@@ -9,6 +9,7 @@ interface FormComboboxProps {
   onChange: (value: string) => void;
   error?: string | undefined;
   placeholder?: string | undefined;
+  id?: string;
 }
 
 export function FormCombobox({
@@ -19,7 +20,13 @@ export function FormCombobox({
   onChange,
   error,
   placeholder = "Select or search...",
+  id,
 }: FormComboboxProps) {
+  const generatedId = useId();
+  const comboboxId = id ?? generatedId;
+  const listboxId = `${comboboxId}-listbox`;
+  const errorId = `${comboboxId}-error`;
+
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +66,9 @@ export function FormCombobox({
 
   return (
     <div className="space-y-2" ref={containerRef}>
-      <label className="block text-sm font-semibold text-slate-700">{label}</label>
+      <label htmlFor={comboboxId} className="block text-sm font-semibold text-slate-700">
+        {label}
+      </label>
 
       {/* Trigger */}
       <div className="relative">
@@ -68,7 +77,13 @@ export function FormCombobox({
         )}
 
         <button
+          id={comboboxId}
           type="button"
+          role="combobox"
+          aria-expanded={open}
+          aria-controls={listboxId}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error ? errorId : undefined}
           onClick={() => setOpen((o) => !o)}
           className={`w-full rounded-xl border bg-white px-4 py-3 text-left outline-none transition flex items-center justify-between
             ${Icon ? "pl-10" : ""}
@@ -105,12 +120,14 @@ export function FormCombobox({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search executive..."
+                aria-label="Search executives"
                 className="w-full text-sm outline-none placeholder:text-slate-400 bg-transparent"
               />
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
+                  aria-label="Clear search"
                   className="text-slate-400 hover:text-slate-600"
                 >
                   <X className="h-3 w-3" />
@@ -119,12 +136,16 @@ export function FormCombobox({
             </div>
 
             {/* Options list */}
-            <ul className="max-h-52 overflow-y-auto py-1 divide-y divide-slate-50">
+            <ul
+              id={listboxId}
+              role="listbox"
+              className="max-h-52 overflow-y-auto py-1 divide-y divide-slate-50"
+            >
               {filtered.length === 0 ? (
                 <li className="px-4 py-3 text-sm text-slate-400 text-center">No results found</li>
               ) : (
                 filtered.map((option) => (
-                  <li key={option}>
+                  <li key={option} role="option" aria-selected={value === option}>
                     <button
                       type="button"
                       onClick={() => select(option)}
@@ -150,7 +171,11 @@ export function FormCombobox({
         )}
       </div>
 
-      {error && <p className="text-sm text-danger">{error}</p>}
+      {error && (
+        <p id={errorId} role="alert" className="text-sm text-danger">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
