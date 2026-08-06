@@ -24,7 +24,7 @@ export function PageTwo() {
                 Terms & Conditions
               </h2>
               <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-slate-600">
-                Please review the following terms. They form part of your confirmed booking.
+                Please review the following terms. They form part of the booking.
               </p>
             </div>
             <span

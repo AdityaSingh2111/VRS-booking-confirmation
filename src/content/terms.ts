@@ -78,8 +78,8 @@ export const restrictedItems: TermsSection = {
     "Hazardous Chemicals",
     "Flammable Materials",
     "Perishable Goods",
-    "narcotics",
-    "Government restricted items",
+    "Narcotics",
+    "Govt. restricted items",
   ],
   note: "Fragile valuables(unless declared in advance) & the above items must not be handed over for packing or transportation under any circumstances. The company shall bear no liability for any such undeclared items.",
 };

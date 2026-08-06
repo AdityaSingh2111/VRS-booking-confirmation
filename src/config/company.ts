@@ -35,7 +35,7 @@ export const contact = {
 
 // ─── Document Metadata ──────────────────────────────────────────
 export const doc = {
-  title: `${company.name} Booking Confirmation | ${company.nameFull}`,
+  title: `${company.name} Booking Confirmation | ${company.legalName}`,
   description: `Premium booking confirmation document generator for ${company.nameFull}.`,
   totalPages: 2,
   copyright: `© ${new Date().getFullYear()} ${company.legalName}. All rights reserved.`,
