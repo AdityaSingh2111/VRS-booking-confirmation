@@ -28,6 +28,7 @@ export function CustomerSection({ register, watch, errors }: CustomerSectionProp
         <FormSelect label="Title" register={register("title")} options={customerTitles} />
         <FormInput
           label="Customer Name"
+          autoComplete="name"
           placeholder="Enter customer name"
           icon={User}
           register={register("customerName")}
@@ -37,6 +38,7 @@ export function CustomerSection({ register, watch, errors }: CustomerSectionProp
         <div className="md:col-span-2">
           <FormInput
             label="Phone Number"
+            autoComplete="tel"
             placeholder="9876543210"
             type="tel"
             icon={Phone}
@@ -61,6 +63,7 @@ export function CustomerSection({ register, watch, errors }: CustomerSectionProp
           {!whatsappSameAsPhone && (
             <FormInput
               label="WhatsApp Number"
+              autoComplete="tel"
               placeholder="9876543210"
               type="tel"
               icon={MessageCircle}
@@ -73,6 +76,7 @@ export function CustomerSection({ register, watch, errors }: CustomerSectionProp
         <div className="md:col-span-2">
           <FormInput
             label="Email Address"
+            autoComplete="email"
             placeholder="customer@email.com"
             type="email"
             icon={Mail}

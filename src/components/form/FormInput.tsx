@@ -7,6 +7,7 @@ interface FormInputProps {
   placeholder?: string;
   type?: string;
   icon?: LucideIcon;
+  autoComplete?: React.HTMLInputAutoCompleteAttribute;
   register?: UseFormRegisterReturn;
   error?: string | undefined;
   readOnly?: boolean;
@@ -23,6 +24,7 @@ export function FormInput({
   icon: Icon,
   register,
   error,
+  autoComplete,
   readOnly = false,
   value,
   disabled = false,
@@ -47,6 +49,7 @@ export function FormInput({
         <input
           id={inputId}
           type={type}
+          autoComplete={autoComplete}
           placeholder={placeholder}
           readOnly={readOnly}
           disabled={disabled}
