@@ -88,16 +88,17 @@ function CustomerDetailItem({
   value,
   icon,
   prominent = false,
+  className = "",
 }: {
   label: string;
   value: string;
   icon: React.ReactNode;
   prominent?: boolean;
+  className?: string;
 }) {
   return (
     <div
-      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-0.5 ${prominent ? "customer-detail-prominent" : ""
-        }`}
+      className={`customer-detail-item flex min-w-0 items-center gap-2.5 py-0.5 ${prominent ? "customer-detail-prominent" : ""} ${className}`}
     >
       <span
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border"
@@ -112,7 +113,7 @@ function CustomerDetailItem({
         <p className="text-[7.5px] font-semibold uppercase tracking-[0.18em] text-slate-700">
           {label}
         </p>
-        <p className="mt-0.5 break-words text-[11.5px] font-semibold leading-[1.3] text-foreground" style={{ overflowWrap: "anywhere" }}>
+        <p className="mt-0.5 break-words text-[11.5px] font-semibold leading-none text-foreground" style={{ overflowWrap: "anywhere" }}>
           {value}
         </p>
       </div>
@@ -298,23 +299,21 @@ export function PageOne({ booking }: PageOneProps) {
             className="page-one-card customer-details-card rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2"
             style={{ "--primary": "var(--secondary)" } as React.CSSProperties}
           >
-            <div className="customer-details-grid grid grid-cols-2 gap-x-3 gap-y-1">
+            <div className="customer-details-grid grid grid-cols-2 gap-x-3">
               {/* Row 1: Customer Name — full width */}
-              <div className="col-span-2">
-                <CustomerDetailItem
-                  label="Customer Name"
-                  value={booking.customer.title + " " + booking.customer.name}
-                  icon={<User className="h-3.5 w-3.5" />}
-                />
-              </div>
+              <CustomerDetailItem
+                className="col-span-2"
+                label="Customer Name"
+                value={booking.customer.title + " " + booking.customer.name}
+                icon={<User className="h-3.5 w-3.5" />}
+              />
               {/* Row 2: Email Address — full width */}
-              <div className="col-span-2">
-                <CustomerDetailItem
-                  label="Email Address"
-                  value={booking.customer.email || "N/A"}
-                  icon={<MailIcon className="h-3.5 w-3.5" />}
-                />
-              </div>
+              <CustomerDetailItem
+                className="col-span-2"
+                label="Email Address"
+                value={booking.customer.email || "N/A"}
+                icon={<MailIcon className="h-3.5 w-3.5" />}
+              />
               {/* Row 3: Phone | WhatsApp — two equal columns */}
               <CustomerDetailItem
                 label="Phone Number"
